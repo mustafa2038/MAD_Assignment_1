@@ -17,4 +17,8 @@
     <string name="restart_button_string">Restart</string>
     <string name="o_string">O</string>
     <string name="x_string">X</string>
+    <string name="exit_game_string">Exit Game</string>
+    <string name="are_you_sure_string">Are You Sure?</string>
+    <string name="end_game_string">End Game</string>
+    <string name="cancel_button_string">Cancel</string>
 </resources>
