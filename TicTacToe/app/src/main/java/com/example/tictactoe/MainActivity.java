@@ -27,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(Integer integer) {
                 if(mainActivityDataViewModel.getClickedValue() == 1) {
-                    // loadPlaySettingsFragment();
+                    // loadPlayGameSettingsFragment();
                 } else if(mainActivityDataViewModel.getClickedValue() == 2) {
-                    // loadGameFragment();
+                    // loadPersonalisationFragment();
+                } else if(mainActivityDataViewModel.getClickedValue() == 3) {
+                    // loadLeaderBoardFragment();
                 }
             }
         });
