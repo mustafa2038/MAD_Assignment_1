@@ -7,4 +7,14 @@
     <string name="multiplayer_button_string">Multiplayer</string>
     <string name="personalisation_button_string">Personalisation</string>
     <string name="leaderboard_button_string">Leaderboard</string>
+    <string name="player_indicator_string">Player 1 Turn</string>
+    <string name="timer_string">Timer:</string>
+    <string name="turn_string">Turns:</string>
+    <string name="timer_count_string">0:10</string>
+    <string name="turn_count_string">5</string>
+    <string name="undo_button_string">Undo</string>
+    <string name="settings_button_string">Settings</string>
+    <string name="restart_button_string">Restart</string>
+    <string name="o_string">O</string>
+    <string name="x_string">X</string>
 </resources>

@@ -24,6 +24,7 @@ public class MenuFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
         TextView menuTitle = view.findViewById(R.id.menuTitle);
+
         Button singlePlayerButton = view.findViewById(R.id.singlePlayerButton);
         Button multiplayerButton = view.findViewById(R.id.multiplayerButton);
         Button personalisationButton = view.findViewById(R.id.personalisationButton);
