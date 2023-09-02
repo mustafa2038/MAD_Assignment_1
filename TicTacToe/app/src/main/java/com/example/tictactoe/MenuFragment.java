@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,12 +24,42 @@ public class MenuFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
         TextView menuTitle = view.findViewById(R.id.menuTitle);
 
         Button singlePlayerButton = view.findViewById(R.id.singlePlayerButton);
         Button multiplayerButton = view.findViewById(R.id.multiplayerButton);
         Button personalisationButton = view.findViewById(R.id.personalisationButton);
         Button leaderBoardButton = view.findViewById(R.id.leaderboardButton);
+
+        singlePlayerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setClickedValue(1);
+            }
+        });
+
+        multiplayerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setClickedValue(1);
+            }
+        });
+
+        personalisationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setClickedValue(2);
+            }
+        });
+
+        leaderBoardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setClickedValue(3);
+            }
+        });
 
         return view;
     }

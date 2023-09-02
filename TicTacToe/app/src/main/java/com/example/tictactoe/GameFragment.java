@@ -42,6 +42,7 @@ public class GameFragment extends Fragment {
         Button undoButton = view.findViewById(R.id.undoButton);
         Button settingButton = view.findViewById(R.id.settingButton);
         Button restartButton = view.findViewById(R.id.restartButton);
+
         return view;
     }
 }
