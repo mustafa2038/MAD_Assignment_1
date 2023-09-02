@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,6 +21,18 @@ public class MainActivity extends AppCompatActivity {
 
         loadMenuFragment();
 
+
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(this).get(MainActivityData.class);
+        mainActivityDataViewModel.clickedValue.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                if(mainActivityDataViewModel.getClickedValue() == 1) {
+                    // loadPlaySettingsFragment();
+                } else if(mainActivityDataViewModel.getClickedValue() == 2) {
+                    // loadGameFragment();
+                }
+            }
+        });
     }
 
     public void loadMenuFragment() {
