@@ -165,7 +165,7 @@
             android:id="@+id/butReturn"
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:text="<"
+            android:text="Return"
             app:layout_constraintEnd_toStartOf="@id/guideline3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
