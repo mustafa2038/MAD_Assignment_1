@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalisationFragment">
+
+    <TextView
+        android:id="@+id/personalisationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personalisation"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/player2Constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player2Constraint"
+        android:layout_width="366dp"
+        android:layout_height="272dp"
+        app:layout_constraintBottom_toTopOf="@+id/personalisationButtonsConstraint"
+        app:layout_constraintEnd_toStartOf="@+id/personalisationButtonsConstraint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/player1Constraint"
+        app:layout_constraintTop_toBottomOf="@+id/personalisationTitle"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent=".5">
+
+        <EditText
+            android:id="@+id/player2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Player 2 Name"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/player2Avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/player2Avatar"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/player2Marker"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player2Text"
+            app:layout_constraintVertical_bias="0.5"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/player2Marker"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@android:drawable/btn_dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/player2Avatar"
+            app:layout_constraintTop_toBottomOf="@+id/player2Text"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player1Constraint"
+        android:layout_width="366dp"
+        android:layout_height="272dp"
+        app:layout_constraintBottom_toTopOf="@+id/personalisationButtonsConstraint"
+        app:layout_constraintEnd_toStartOf="@+id/player2Constraint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/personalisationButtonsConstraint"
+        app:layout_constraintTop_toBottomOf="@+id/personalisationTitle"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent=".5">
+
+        <EditText
+            android:id="@+id/player1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Player 1 Name"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/player1Marker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/player1Avatar"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/player1Marker"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player1Text"
+            app:layout_constraintVertical_bias="0.5"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/player1Marker"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@android:drawable/btn_dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/player1Avatar"
+            app:layout_constraintTop_toBottomOf="@+id/player1Text"
+            app:layout_constraintVertical_bias="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/personalisationButtonsConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player1Constraint"
+        app:layout_constraintVertical_bias="0.5">
+
+        <Button
+            android:id="@+id/personalisationBack"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:text="Back"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/personalisationSave"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <Button
+            android:id="@+id/personalisationSave"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:text="SAVE"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/personalisationBack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
