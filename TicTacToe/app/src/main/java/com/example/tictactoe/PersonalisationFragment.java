@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +63,18 @@ public class PersonalisationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personalisation, container, false);
+        View view = inflater.inflate(R.layout.fragment_personalisation, container, false);
+
+        TextView title = view.findViewById(R.id.personalisationTitle);
+        EditText player1Name = view.findViewById(R.id.player1Text);
+        EditText player2Name = view.findViewById(R.id.player2Text);
+        ImageView player1Avatar = view.findViewById(R.id.player1Avatar);
+        ImageView player2Avatar = view.findViewById(R.id.player2Avatar);
+        ImageView player1Marker = view.findViewById(R.id.player1Marker);
+        ImageView player2Marker = view.findViewById(R.id.player2Marker);
+        Button personalisationSaveButton = view.findViewById(R.id.personalisationSave);
+        Button personalisationBackButton = view.findViewById(R.id.personalisationBack);
+
+        return view;
     }
 }
