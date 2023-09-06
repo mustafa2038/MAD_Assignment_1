@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     AvatarListFragmentPlayer2 avatarListFragmentPlayer2 = new AvatarListFragmentPlayer2();
     MarkerListFragment markerListFragment = new MarkerListFragment();
     MarkerListFragmentPlayer2 markerListFragmentPlayer2 = new MarkerListFragmentPlayer2();
+    LeaderboardFragment leaderboardFragment = new LeaderboardFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadPersonalisationFragment()")) {
                     loadPersonalisationFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadLeaderboardFragment()")) {
-                    // loadLeaderboardFragment();
+                    loadLeaderboardFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadMenuFragment()")) {
                     loadMenuFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadAvatarListFragment()")) {
@@ -154,6 +155,17 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, gameFragment).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, gameFragment).commit();
+        }
+    }
+
+    public void loadLeaderboardFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
+
+        if(playGameSettingsFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, leaderboardFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, leaderboardFragment).commit();
         }
     }
 }
