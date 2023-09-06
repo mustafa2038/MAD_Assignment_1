@@ -55,9 +55,9 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/player1Text"
-            android:background="@drawable/gigachad"
             app:layout_constraintVertical_bias="0.5"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars"
+            android:background="@drawable/square_shape" />
 
         <ImageView
             android:id="@+id/player1Marker"
@@ -104,9 +104,9 @@
             app:layout_constraintEnd_toStartOf="@+id/player2Marker"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/pepe1"
             app:layout_constraintTop_toBottomOf="@+id/player2Text"
             app:layout_constraintVertical_bias="0.5"
+            android:background="@drawable/square_shape"
             tools:src="@tools:sample/avatars" />
 
         <ImageView

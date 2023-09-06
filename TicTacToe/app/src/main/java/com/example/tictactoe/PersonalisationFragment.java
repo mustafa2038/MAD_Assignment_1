@@ -1,5 +1,6 @@
 package com.example.tictactoe;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -85,9 +86,12 @@ public class PersonalisationFragment extends Fragment {
 
                 String player1NameString = mainActivityDataViewModel.getPlayer1Name();
                 String player2NameString = mainActivityDataViewModel.getPlayer2Name();
+                Drawable player1AvatarDrawable = mainActivityDataViewModel.getPlayer1AvatarDrawable();
+                //ImageView player2AvatarSelection = mainActivityDataViewModel.getPlayer2AvatarDrawable();
 
                 player1Name.setText(player1NameString);
                 player2Name.setText(player2NameString);
+                player1Avatar.setImageDrawable(player1AvatarDrawable);
             }
         });
 
