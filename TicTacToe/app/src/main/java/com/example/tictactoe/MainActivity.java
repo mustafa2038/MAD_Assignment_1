@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     GameFragment gameFragment = new GameFragment();
     GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
     PersonalisationFragment personalisationFragment = new PersonalisationFragment();
+    AvatarListFragment avatarListFragment = new AvatarListFragment();
+    MarkerListFragment markerListFragment = new MarkerListFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
                     loadPersonalisationFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadLeaderboardFragment()")) {
                     // loadLeaderboardFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadMenuFragment()")) {
+                    loadMenuFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadAvatarListFragment()")) {
+                    loadAvatarListFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragment()")) {
+                    loadMarkerListFragment();
                 }
             }
         });
@@ -58,6 +66,28 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, gameSettingsPlay).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, gameSettingsPlay).commit();
+        }
+    }
+
+    public void loadMarkerListFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment markerListFrag = fm.findFragmentById(R.id.main_container);
+
+        if(markerListFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, markerListFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, markerListFragment).commit();
+        }
+    }
+
+    public void loadAvatarListFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment avatarListFrag = fm.findFragmentById(R.id.main_container);
+
+        if(avatarListFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, avatarListFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, avatarListFragment).commit();
         }
     }
 

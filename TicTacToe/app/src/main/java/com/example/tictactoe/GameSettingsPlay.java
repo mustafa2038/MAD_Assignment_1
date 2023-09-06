@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,8 @@ public class GameSettingsPlay extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_game_settings_play, container, false);
 
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
         TextView gameSettingsPlayTitle = view.findViewById(R.id.textView1);
         TextView gameSettingsPlayBoardSizeTitle = view.findViewById(R.id.textView2);
         TextView gameSettingsPlayStreaksToWinTitle = view.findViewById(R.id.textView3);
@@ -35,6 +38,13 @@ public class GameSettingsPlay extends Fragment {
 
         Button gameSettingsPlayReturn = view.findViewById(R.id.butReturn);
         Button gameSettingsPlayGame = view.findViewById(R.id.butPlayGame);
+
+        gameSettingsPlayReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setClickedValue("loadMenuFragment()");
+            }
+        });
 
         return view;
     }

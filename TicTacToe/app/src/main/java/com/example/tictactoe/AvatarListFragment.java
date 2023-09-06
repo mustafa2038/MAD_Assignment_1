@@ -71,6 +71,8 @@ public class AvatarListFragment extends Fragment {
         ImageView wojakAvatar = view.findViewById(R.id.wojakAvatar);
         ImageView pepeAvatar = view.findViewById(R.id.pepeAvatar);
 
+
+
         return view;
     }
 }
