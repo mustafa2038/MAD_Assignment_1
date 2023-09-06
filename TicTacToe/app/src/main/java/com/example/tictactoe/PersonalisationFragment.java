@@ -22,45 +22,10 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class PersonalisationFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    EditText player1Name;
+    EditText player2Name;
     public PersonalisationFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PersonalisationFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PersonalisationFragment newInstance(String param1, String param2) {
-        PersonalisationFragment fragment = new PersonalisationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -72,8 +37,8 @@ public class PersonalisationFragment extends Fragment {
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         TextView title = view.findViewById(R.id.personalisationTitle);
-        EditText player1Name = view.findViewById(R.id.player1Text);
-        EditText player2Name = view.findViewById(R.id.player2Text);
+        player1Name = view.findViewById(R.id.player1Text);
+        player2Name = view.findViewById(R.id.player2Text);
         ImageView player1Avatar = (ImageView) view.findViewById(R.id.player1Avatar);
         ImageView player2Avatar = (ImageView) view.findViewById(R.id.player2Avatar);
         ImageView player1Marker = view.findViewById(R.id.player1Marker);
@@ -117,6 +82,8 @@ public class PersonalisationFragment extends Fragment {
         player1Avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1Name(player1Name.getText().toString());
+                mainActivityDataViewModel.setPlayer2Name(player2Name.getText().toString());
                 mainActivityDataViewModel.setClickedValue("loadAvatarListFragment()");
             }
         });
@@ -124,6 +91,8 @@ public class PersonalisationFragment extends Fragment {
         player2Avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1Name(player1Name.getText().toString());
+                mainActivityDataViewModel.setPlayer2Name(player2Name.getText().toString());
                 mainActivityDataViewModel.setClickedValue("loadAvatarListFragmentPlayer2()");
             }
         });
@@ -131,6 +100,8 @@ public class PersonalisationFragment extends Fragment {
         player1Marker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1Name(player1Name.getText().toString());
+                mainActivityDataViewModel.setPlayer2Name(player2Name.getText().toString());
                 mainActivityDataViewModel.setClickedValue("loadMarkerListFragment()");
             }
         });
@@ -138,11 +109,11 @@ public class PersonalisationFragment extends Fragment {
         player2Marker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1Name(player1Name.getText().toString());
+                mainActivityDataViewModel.setPlayer2Name(player2Name.getText().toString());
                 mainActivityDataViewModel.setClickedValue("loadMarkerListFragmentPlayer2()");
             }
         });
-
-
 
         return view;
     }
