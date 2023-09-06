@@ -16,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/gameInfoConstraintLayout">
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button0"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -25,10 +25,12 @@
             app:layout_constraintRight_toLeftOf="@id/button1"
             app:layout_constraintBottom_toTopOf="@id/button3"
             android:background="@drawable/square_shape"
+            android:src="@drawable/cross"
+            android:scaleType="fitCenter"
             android:hint="@string/x_string">
-        </androidx.appcompat.widget.AppCompatButton>
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button1"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -37,10 +39,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/button4"
             android:background="@drawable/square_shape"
-            android:hint="@string/o_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:src="@drawable/cross"
+            android:scaleType="fitCenter">
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button2"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -49,10 +52,12 @@
             app:layout_constraintLeft_toRightOf="@id/button1"
             app:layout_constraintBottom_toTopOf="@id/button5"
             android:background="@drawable/square_shape"
-            android:hint="@string/o_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:src="@drawable/cross"
+            android:hint="@string/o_string"
+            android:scaleType="fitCenter">
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button3"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -61,10 +66,11 @@
             app:layout_constraintBottom_toTopOf="@id/button6"
             app:layout_constraintRight_toLeftOf="@id/button4"
             android:background="@drawable/square_shape"
-            android:hint="@string/o_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:src="@drawable/cross"
+            android:scaleType="fitCenter">
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button4"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -73,10 +79,11 @@
             app:layout_constraintLeft_toRightOf="@id/button3"
             app:layout_constraintRight_toLeftOf="@id/button5"
             android:background="@drawable/square_shape"
-            android:hint="@string/x_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:src="@drawable/cross"
+            android:scaleType="fitCenter">
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button5"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -85,10 +92,11 @@
             app:layout_constraintLeft_toRightOf="@id/button4"
             app:layout_constraintRight_toRightOf="parent"
             android:background="@drawable/square_shape"
-            android:hint="@string/o_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:src="@drawable/cross"
+            android:scaleType="fitCenter">
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button6"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -97,10 +105,11 @@
             app:layout_constraintRight_toLeftOf="@id/button7"
             app:layout_constraintTop_toBottomOf="@id/button3"
             android:background="@drawable/square_shape"
-            android:hint="@string/o_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:src="@drawable/cross"
+            android:scaleType="fitCenter">
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button7"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -108,11 +117,12 @@
             app:layout_constraintLeft_toRightOf="@id/button6"
             app:layout_constraintRight_toLeftOf="@id/button8"
             app:layout_constraintTop_toBottomOf="@id/button4"
+            android:src="@drawable/cross"
             android:background="@drawable/square_shape"
-            android:hint="@string/o_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:scaleType="fitCenter">
+        </ImageButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/button8"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -120,9 +130,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/button7"
             app:layout_constraintTop_toBottomOf="@id/button5"
+            android:src="@drawable/cross"
             android:background="@drawable/square_shape"
-            android:hint="@string/x_string">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:scaleType="fitCenter">
+        </ImageButton>
 
 
 
