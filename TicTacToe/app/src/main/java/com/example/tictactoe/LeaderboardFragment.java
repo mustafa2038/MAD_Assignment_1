@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,9 +32,9 @@ public class LeaderboardFragment extends Fragment {
 
         List<Item> items = new ArrayList<>();
         items.add(new Item("John wick", "Score: 12345", R.drawable.gigachad));
-        items.add(new Item("Robert j", "Score: 12345", R.drawable.gigachad));
-        items.add(new Item("James Gunn", "Score: 12345", R.drawable.gigachad));
-        items.add(new Item("Ricky tales", "Score: 12345", R.drawable.gigachad));
+        items.add(new Item("Robert j", "Score: 12345", R.drawable.pepe1));
+        items.add(new Item("James Gunn", "Score: 12345", R.drawable.wojak));
+        items.add(new Item("Ricky tales", "Score: 12345", R.drawable.crown));
         items.add(new Item("Micky mose", "Score: 12345", R.drawable.gigachad));
         items.add(new Item("Pick War", "Score: 12345", R.drawable.gigachad));
         items.add(new Item("Leg piece", "Score: 12345", R.drawable.gigachad));
