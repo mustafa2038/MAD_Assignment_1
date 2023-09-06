@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
     GameFragment gameFragment = new GameFragment();
     GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
+    GameSettingsInGame gameSettingsInGame = new GameSettingsInGame();
     PersonalisationFragment personalisationFragment = new PersonalisationFragment();
     AvatarListFragment avatarListFragment = new AvatarListFragment();
     AvatarListFragmentPlayer2 avatarListFragmentPlayer2 = new AvatarListFragmentPlayer2();
@@ -48,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
                     loadMarkerListFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragmentPlayer2()")) {
                     loadMarkerListFragmentPlayer2();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadInGameSettingsFragment()")) {
+                    loadInGameSettingsFragment();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragment()")) {
+                    loadGameFragment();
                 }
             }
         });
@@ -72,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, gameSettingsPlay).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, gameSettingsPlay).commit();
+        }
+    }
+
+    public void loadInGameSettingsFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
+
+        if(playGameSettingsFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, gameSettingsInGame).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, gameSettingsInGame).commit();
         }
     }
 
