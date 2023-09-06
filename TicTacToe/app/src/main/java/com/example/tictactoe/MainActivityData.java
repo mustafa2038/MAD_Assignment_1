@@ -14,6 +14,9 @@ public class MainActivityData extends ViewModel {
     public MutableLiveData<Drawable> player1AvatarDrawable = new MutableLiveData<Drawable>();
     public MutableLiveData<Drawable> player2AvatarDrawable = new MutableLiveData<Drawable>();
 
+    public MutableLiveData<Drawable> player1MarkerDrawable = new MutableLiveData<>();
+    public MutableLiveData<Drawable> player2MarkerDrawable = new MutableLiveData<>();
+
     public MainActivityData() {
         clickedValue.setValue("");
     }
@@ -39,6 +42,22 @@ public class MainActivityData extends ViewModel {
     }
 
     public void setPlayer2AvatarDrawable(Drawable value) {
+        player2AvatarDrawable.setValue(value);
+    }
+
+    public Drawable getPlayer1MarkerDrawable() {
+        return player1AvatarDrawable.getValue();
+    }
+
+    public void setPlayer1MarkerDrawable(Drawable value) {
+        player1AvatarDrawable.setValue(value);
+    }
+
+    public Drawable getPlayer2MarkerDrawable() {
+        return player2AvatarDrawable.getValue();
+    }
+
+    public void setPlayer2MarkerDrawable(Drawable value) {
         player2AvatarDrawable.setValue(value);
     }
 

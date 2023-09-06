@@ -86,12 +86,16 @@ public class PersonalisationFragment extends Fragment {
 
                 String player1NameString = mainActivityDataViewModel.getPlayer1Name();
                 String player2NameString = mainActivityDataViewModel.getPlayer2Name();
+
                 Drawable player1AvatarDrawable = mainActivityDataViewModel.getPlayer1AvatarDrawable();
-                //ImageView player2AvatarSelection = mainActivityDataViewModel.getPlayer2AvatarDrawable();
+                Drawable player2AvatarDrawable = mainActivityDataViewModel.getPlayer2AvatarDrawable();
+
 
                 player1Name.setText(player1NameString);
                 player2Name.setText(player2NameString);
+
                 player1Avatar.setImageDrawable(player1AvatarDrawable);
+                player2Avatar.setImageDrawable(player2AvatarDrawable);
             }
         });
 
@@ -121,7 +125,7 @@ public class PersonalisationFragment extends Fragment {
         player2Avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue("loadAvatarListFragment()");
+                mainActivityDataViewModel.setClickedValue("loadAvatarListFragmentPlayer2()");
             }
         });
 
@@ -135,9 +139,11 @@ public class PersonalisationFragment extends Fragment {
         player2Marker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue("loadMarkerListFragment()");
+                mainActivityDataViewModel.setClickedValue("loadMarkerListFragmentPlayer2()");
             }
         });
+
+
 
         return view;
     }
