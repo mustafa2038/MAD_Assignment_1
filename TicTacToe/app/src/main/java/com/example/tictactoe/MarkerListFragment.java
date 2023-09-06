@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,12 +64,46 @@ public class MarkerListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_marker_list, container, false);
 
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
         Button markerSaveButton = view.findViewById(R.id.markerSaveButton);
         Button markerBackButton = view.findViewById(R.id.markerBackButton);
         ImageView circleMarker = view.findViewById(R.id.circleMarker);
         ImageView crossMarker = view.findViewById(R.id.crossMarker);
         ImageView crownMarker = view.findViewById(R.id.crownMarker);
         ImageView swordMarker = view.findViewById(R.id.swordMarker);
+
+        circleMarker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1MarkerDrawable(circleMarker.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
+
+        crossMarker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1MarkerDrawable(crossMarker.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
+
+        crownMarker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1MarkerDrawable(crownMarker.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
+
+        swordMarker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1MarkerDrawable(swordMarker.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
 
         return view;
     }

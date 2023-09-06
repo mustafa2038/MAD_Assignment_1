@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
     GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
     PersonalisationFragment personalisationFragment = new PersonalisationFragment();
     AvatarListFragment avatarListFragment = new AvatarListFragment();
+    AvatarListFragmentPlayer2 avatarListFragmentPlayer2 = new AvatarListFragmentPlayer2();
     MarkerListFragment markerListFragment = new MarkerListFragment();
+    //MarkerListFragmentPlayer2 markerListFragmentPlayer2 = new MarkerListFragmentPlayer2();
 
     GameSettingsPlay gameSettingsFragment = new GameSettingsPlay();
     @Override
@@ -39,7 +41,11 @@ public class MainActivity extends AppCompatActivity {
                     loadMenuFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadAvatarListFragment()")) {
                     loadAvatarListFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadAvatarListFragmentPlayer2()")) {
+                    loadAvatarListFragmentPlayer2();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragment()")) {
+                    loadMarkerListFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragmentPlayer2()")) {
                     loadMarkerListFragment();
                 }
             }
@@ -79,6 +85,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /*public void loadMarkerListFragmentPlayer2() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment markerListFragPlayer2 = fm.findFragmentById(R.id.main_container);
+
+        if(markerListFragPlayer2 == null) {
+            fm.beginTransaction().add(R.id.main_container, markerListFragmentPlayer2);
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, markerListFragmentPlayer2);
+        }
+    }*/
+
     public void loadAvatarListFragment() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment avatarListFrag = fm.findFragmentById(R.id.main_container);
@@ -87,6 +104,17 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, avatarListFragment).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, avatarListFragment).commit();
+        }
+    }
+
+    public void loadAvatarListFragmentPlayer2() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment avatarListFragPlayer2 = fm.findFragmentById(R.id.main_container);
+
+        if(avatarListFragPlayer2 == null) {
+            fm.beginTransaction().add(R.id.main_container, avatarListFragmentPlayer2).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, avatarListFragmentPlayer2).commit();
         }
     }
 
