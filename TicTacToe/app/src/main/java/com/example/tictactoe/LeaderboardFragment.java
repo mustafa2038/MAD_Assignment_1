@@ -59,9 +59,8 @@ public class LeaderboardFragment extends Fragment {
         backBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Assuming you have a ViewModel named mainActivityDataViewModel
+
                 if (mainActivityDataViewModel != null) {
-                    // Set the clicked value to "loadMenuFragment()"
                     mainActivityDataViewModel.setClickedValue("loadMenuFragment()");
                 }
             }
