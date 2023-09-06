@@ -4,17 +4,17 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class MainActivityData extends ViewModel {
-    public MutableLiveData<Integer> clickedValue = new MutableLiveData<>();
+    public MutableLiveData<String> clickedValue = new MutableLiveData<>();
 
     public MainActivityData() {
-        clickedValue.setValue(0);
+        clickedValue.setValue("");
     }
 
-    public int getClickedValue() {
+    public String getClickedValue() {
         return clickedValue.getValue();
     }
 
-    public void setClickedValue(int value) {
+    public void setClickedValue(String value) {
         clickedValue.setValue(value);
     }
 }

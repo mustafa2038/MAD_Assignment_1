@@ -23,15 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(this).get(MainActivityData.class);
-        mainActivityDataViewModel.clickedValue.observe(this, new Observer<Integer>() {
+        mainActivityDataViewModel.clickedValue.observe(this, new Observer<String>() {
             @Override
-            public void onChanged(Integer integer) {
-                if(mainActivityDataViewModel.getClickedValue() == 1) {
+            public void onChanged(String str) {
+                if(mainActivityDataViewModel.getClickedValue().equals("loadPlayGameSettingsFragment()")) {
                     // loadPlayGameSettingsFragment();
-                } else if(mainActivityDataViewModel.getClickedValue() == 2) {
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadPersonalisationFragment()")) {
                     // loadPersonalisationFragment();
-                } else if(mainActivityDataViewModel.getClickedValue() == 3) {
-                    // loadLeaderBoardFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadLeaderboardFragment()")) {
+                    // loadLeaderboardFragment();
                 }
             }
         });

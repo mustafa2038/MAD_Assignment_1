@@ -36,28 +36,28 @@ public class MenuFragment extends Fragment {
         singlePlayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue(1);
+                mainActivityDataViewModel.setClickedValue("loadPlayGameSettingsFragment()");
             }
         });
 
         multiplayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue(1);
+                mainActivityDataViewModel.setClickedValue("loadPlayGameSettingsFragment()");
             }
         });
 
         personalisationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue(2);
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
             }
         });
 
         leaderBoardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue(3);
+                mainActivityDataViewModel.setClickedValue("loadLeaderboardFragment()");
             }
         });
 
