@@ -3,8 +3,10 @@ package com.example.tictactoe;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,33 @@ public class GameSettingsPlay extends Fragment {
         Button streakBut2 = rootView.findViewById(R.id.butStreak2);
         Button streakBut3 = rootView.findViewById(R.id.butStreak3);
 
+
+
+
+
+
+        mainActivityDataViewModel.boardClicked.observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String str) {
+                if(mainActivityDataViewModel.getBoardClicked().equals("T") && mainActivityDataViewModel.getStreakClicked().equals("T")) {
+                    playBut.setVisibility(View.VISIBLE);
+                } else {
+                    playBut.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        mainActivityDataViewModel.streakClicked.observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String str) {
+               if(mainActivityDataViewModel.getBoardClicked().equals("T") && mainActivityDataViewModel.getStreakClicked().equals("T")) {
+                    playBut.setVisibility(View.VISIBLE);
+                } else {
+                    playBut.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
         returnBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,31 +69,37 @@ public class GameSettingsPlay extends Fragment {
         playBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue("loadGameFragment()");
+
+                    mainActivityDataViewModel.setClickedValue("loadGameFragment()");
+
             }
         });
         boardBut1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardSize("3x3");
+                mainActivityDataViewModel.setBoardClicked("T");
             }
         });
         boardBut2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardSize("4x4");
+                mainActivityDataViewModel.setBoardClicked("T");
             }
         });
         boardBut3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardSize("5x5");
+                mainActivityDataViewModel.setBoardClicked("T");
             }
         });
         streakBut1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setStreak("3");
+                mainActivityDataViewModel.setStreakClicked("T");
             }
         });
 
@@ -72,6 +107,7 @@ public class GameSettingsPlay extends Fragment {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setStreak("4");
+                mainActivityDataViewModel.setStreakClicked("T");
             }
         });
 
@@ -79,8 +115,11 @@ public class GameSettingsPlay extends Fragment {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setStreak("5");
+                mainActivityDataViewModel.setStreakClicked("T");
             }
         });
+
+
 
         return rootView;
     }

@@ -18,6 +18,8 @@ public class MainActivityData extends ViewModel {
 
     public MutableLiveData<Drawable> player1MarkerDrawable = new MutableLiveData<>();
     public MutableLiveData<Drawable> player2MarkerDrawable = new MutableLiveData<>();
+    public MutableLiveData<String> boardClicked = new MutableLiveData<>("F");
+    public MutableLiveData<String> streakClicked = new MutableLiveData<>("F");
 
     public MainActivityData() {
         clickedValue.setValue("");
@@ -94,4 +96,9 @@ public class MainActivityData extends ViewModel {
     public void setPlayer2Name(String value) {
         this.player2Name.setValue(value);
     }
+
+    public String getBoardClicked(){return boardClicked.getValue();}
+    public void setBoardClicked(String value){boardClicked.setValue(value);}
+    public String getStreakClicked(){return streakClicked.getValue();}
+    public void setStreakClicked(String value){streakClicked.setValue(value);}
 }
