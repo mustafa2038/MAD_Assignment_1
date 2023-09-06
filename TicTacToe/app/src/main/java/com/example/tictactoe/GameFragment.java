@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,8 @@ public class GameFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_game, container, false);
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
 
         Button button0 = view.findViewById(R.id.button0);
         Button button1 = view.findViewById(R.id.button1);
@@ -32,6 +35,7 @@ public class GameFragment extends Fragment {
         Button button6 = view.findViewById(R.id.button6);
         Button button7 = view.findViewById(R.id.button7);
         Button button8 = view.findViewById(R.id.button8);
+        Button buttonSettings = view.findViewById(R.id.settingButton);
 
         TextView playerIndicatorTextView = view.findViewById(R.id.playerIndicatorTextView);
         TextView timerTextView = view.findViewById(R.id.timerTextView);
@@ -42,6 +46,13 @@ public class GameFragment extends Fragment {
         Button undoButton = view.findViewById(R.id.undoButton);
         Button settingButton = view.findViewById(R.id.settingButton);
         Button restartButton = view.findViewById(R.id.restartButton);
+
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setClickedValue("loadInGameSettingsFragment()");
+            }
+        });
 
         return view;
     }

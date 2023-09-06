@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameSettings">
+    tools:context=".GameSettingsInGame">
 
     <!-- TextView1 at the top -->
     <TextView
@@ -175,7 +175,7 @@
             android:id="@+id/butEndGame"
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:text="END GAME"
+            android:text="End Game"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
