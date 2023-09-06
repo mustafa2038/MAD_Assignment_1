@@ -13,6 +13,8 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
     GameFragment gameFragment = new GameFragment();
+    GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
+    PersonalisationFragment personalisationFragment = new PersonalisationFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(String str) {
                 if(mainActivityDataViewModel.getClickedValue().equals("loadPlayGameSettingsFragment()")) {
-                    // loadPlayGameSettingsFragment();
+                    loadPlayGameSettingsFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadPersonalisationFragment()")) {
-                    // loadPersonalisationFragment();
+                    loadPersonalisationFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadLeaderboardFragment()")) {
                     // loadLeaderboardFragment();
                 }
@@ -39,23 +41,45 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadMenuFragment() {
         FragmentManager fm = getSupportFragmentManager();
-        Fragment menuFrag = fm.findFragmentById(R.id.menuFragmentId);
+        Fragment menuFrag = fm.findFragmentById(R.id.main_container);
 
         if(menuFrag == null) {
             fm.beginTransaction().add(R.id.main_container, menuFragment).commit();
         } else {
-            fm.beginTransaction().add(R.id.main_container, menuFragment).commit();
+            fm.beginTransaction().replace(R.id.main_container, menuFragment).commit();
+        }
+    }
+
+    public void loadPlayGameSettingsFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
+
+        if(playGameSettingsFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, gameSettingsPlay).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, gameSettingsPlay).commit();
+        }
+    }
+
+    public void loadPersonalisationFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment personalisationFrag = fm.findFragmentById(R.id.main_container);
+
+        if(personalisationFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, personalisationFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, personalisationFragment).commit();
         }
     }
 
     public void loadGameFragment() {
         FragmentManager fm = getSupportFragmentManager();
-        Fragment gameFrag = fm.findFragmentById(R.id.gameFragmentId);
+        Fragment gameFrag = fm.findFragmentById(R.id.main_container);
 
         if(gameFrag == null) {
             fm.beginTransaction().add(R.id.main_container, gameFragment).commit();
         } else {
-            fm.beginTransaction().add(R.id.main_container, gameFragment).commit();
+            fm.beginTransaction().replace(R.id.main_container, gameFragment).commit();
         }
     }
 }
