@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -78,7 +79,6 @@ public class PersonalisationFragment extends Fragment {
         ImageView player1Marker = view.findViewById(R.id.player1Marker);
         ImageView player2Marker = view.findViewById(R.id.player2Marker);
         Button personalisationSaveButton = view.findViewById(R.id.personalisationSave);
-        Button personalisationBackButton = view.findViewById(R.id.personalisationBack);
 
         mainActivityDataViewModel.clickedValue.observe(getActivity(), new Observer<String>() {
             @Override
@@ -90,19 +90,18 @@ public class PersonalisationFragment extends Fragment {
                 Drawable player1AvatarDrawable = mainActivityDataViewModel.getPlayer1AvatarDrawable();
                 Drawable player2AvatarDrawable = mainActivityDataViewModel.getPlayer2AvatarDrawable();
 
+                Drawable player1MarkerDrawable = mainActivityDataViewModel.getPlayer1MarkerDrawable();
+                Drawable player2MarkerDrawable = mainActivityDataViewModel.getPlayer2MarkerDrawable();
+
 
                 player1Name.setText(player1NameString);
                 player2Name.setText(player2NameString);
 
                 player1Avatar.setImageDrawable(player1AvatarDrawable);
                 player2Avatar.setImageDrawable(player2AvatarDrawable);
-            }
-        });
 
-        personalisationBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue("loadMenuFragment()");
+                player1Marker.setImageDrawable(player1MarkerDrawable);
+                player2Marker.setImageDrawable(player2MarkerDrawable);
             }
         });
 

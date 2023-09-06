@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     AvatarListFragment avatarListFragment = new AvatarListFragment();
     AvatarListFragmentPlayer2 avatarListFragmentPlayer2 = new AvatarListFragmentPlayer2();
     MarkerListFragment markerListFragment = new MarkerListFragment();
-    //MarkerListFragmentPlayer2 markerListFragmentPlayer2 = new MarkerListFragmentPlayer2();
+    MarkerListFragmentPlayer2 markerListFragmentPlayer2 = new MarkerListFragmentPlayer2();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragment()")) {
                     loadMarkerListFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragmentPlayer2()")) {
-                    loadMarkerListFragment();
+                    loadMarkerListFragmentPlayer2();
                 }
             }
         });
@@ -86,16 +86,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*public void loadMarkerListFragmentPlayer2() {
+    public void loadMarkerListFragmentPlayer2() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment markerListFragPlayer2 = fm.findFragmentById(R.id.main_container);
 
         if(markerListFragPlayer2 == null) {
-            fm.beginTransaction().add(R.id.main_container, markerListFragmentPlayer2);
+            fm.beginTransaction().add(R.id.main_container, markerListFragmentPlayer2).commit();
         } else {
-            fm.beginTransaction().replace(R.id.main_container, markerListFragmentPlayer2);
+            fm.beginTransaction().replace(R.id.main_container, markerListFragmentPlayer2).commit();
         }
-    }*/
+    }
 
     public void loadAvatarListFragment() {
         FragmentManager fm = getSupportFragmentManager();

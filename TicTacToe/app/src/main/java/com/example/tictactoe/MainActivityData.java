@@ -46,19 +46,19 @@ public class MainActivityData extends ViewModel {
     }
 
     public Drawable getPlayer1MarkerDrawable() {
-        return player1AvatarDrawable.getValue();
+        return player1MarkerDrawable.getValue();
     }
 
     public void setPlayer1MarkerDrawable(Drawable value) {
-        player1AvatarDrawable.setValue(value);
+        player1MarkerDrawable.setValue(value);
     }
 
     public Drawable getPlayer2MarkerDrawable() {
-        return player2AvatarDrawable.getValue();
+        return player2MarkerDrawable.getValue();
     }
 
     public void setPlayer2MarkerDrawable(Drawable value) {
-        player2AvatarDrawable.setValue(value);
+        player2MarkerDrawable.setValue(value);
     }
 
     public String getPlayer1Name() {
