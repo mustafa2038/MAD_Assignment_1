@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,7 @@ public class LeaderboardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_leaderboard, container, false);
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerview);
 
@@ -50,6 +53,19 @@ public class LeaderboardFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new MyAdapter(getContext(), items));
+
+        Button backBut = rootView.findViewById(R.id.buttonBack);
+
+        backBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Assuming you have a ViewModel named mainActivityDataViewModel
+                if (mainActivityDataViewModel != null) {
+                    // Set the clicked value to "loadMenuFragment()"
+                    mainActivityDataViewModel.setClickedValue("loadMenuFragment()");
+                }
+            }
+        });
 
         return rootView;
     }
