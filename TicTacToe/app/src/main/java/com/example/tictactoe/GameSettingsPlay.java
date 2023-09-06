@@ -37,7 +37,12 @@ public class GameSettingsPlay extends Fragment {
                 mainActivityDataViewModel.setClickedValue("loadMenuFragment()");
             }
         });
-
+        playBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setClickedValue("loadGameFragment()");
+            }
+        });
         boardBut1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

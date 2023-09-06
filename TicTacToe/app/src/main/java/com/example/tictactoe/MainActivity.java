@@ -11,14 +11,16 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
     GameFragment gameFragment = new GameFragment();
-    GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
+
     PersonalisationFragment personalisationFragment = new PersonalisationFragment();
     AvatarListFragment avatarListFragment = new AvatarListFragment();
     AvatarListFragmentPlayer2 avatarListFragmentPlayer2 = new AvatarListFragmentPlayer2();
     MarkerListFragment markerListFragment = new MarkerListFragment();
+
     //MarkerListFragmentPlayer2 markerListFragmentPlayer2 = new MarkerListFragmentPlayer2();
 
     GameSettingsPlay gameSettingsFragment = new GameSettingsPlay();
+    GameSettingsInGame gameSettingsInGameFragment = new GameSettingsInGame();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +49,12 @@ public class MainActivity extends AppCompatActivity {
                     loadMarkerListFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragmentPlayer2()")) {
                     loadMarkerListFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragment()")){
+                    loadGameFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadInGameSettingsFragment()")){
+                    loadInGameSettingsFragment();
                 }
-            }
+                }
         });
     }
 
@@ -71,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, gameSettingsFragment).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, gameSettingsFragment).commit();
+        }
+    }
+
+    public void loadInGameSettingsFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
+
+        if(playGameSettingsFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, gameSettingsInGameFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, gameSettingsInGameFragment).commit();
         }
     }
 
