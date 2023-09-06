@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -64,12 +65,46 @@ public class AvatarListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_avatar_list, container, false);
 
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
         Button avatarSaveButton = view.findViewById(R.id.avatarSaveButton);
         Button avatarBackButton = view.findViewById(R.id.avatarBackButton);
         ImageView gigachadAvatar = view.findViewById(R.id.gigachadAvatar);
         ImageView laughingAvatar = view.findViewById(R.id.laughingAvatar);
         ImageView wojakAvatar = view.findViewById(R.id.wojakAvatar);
         ImageView pepeAvatar = view.findViewById(R.id.pepeAvatar);
+
+        gigachadAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1AvatarDrawable(gigachadAvatar.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
+
+        laughingAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1AvatarDrawable(laughingAvatar.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
+
+        wojakAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1AvatarDrawable(wojakAvatar.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
+
+        pepeAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setPlayer1AvatarDrawable(pepeAvatar.getDrawable());
+                mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
+            }
+        });
 
         return view;
     }

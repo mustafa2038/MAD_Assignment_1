@@ -13,6 +13,10 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
     GameFragment gameFragment = new GameFragment();
+    GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
+    PersonalisationFragment personalisationFragment = new PersonalisationFragment();
+    AvatarListFragment avatarListFragment = new AvatarListFragment();
+    MarkerListFragment markerListFragment = new MarkerListFragment();
 
     GameSettingsFragment gameSettingsFragment = new GameSettingsFragment();
     @Override
@@ -28,13 +32,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(String str) {
                 if(mainActivityDataViewModel.getClickedValue().equals("loadPlayGameSettingsFragment()")) {
-                    loadGameSettingsFragment();
+                    loadPlayGameSettingsFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadPersonalisationFragment()")) {
-                    // loadPersonalisationFragment();
+                    loadPersonalisationFragment();
                 } else if(mainActivityDataViewModel.getClickedValue().equals("loadLeaderboardFragment()")) {
                     // loadLeaderboardFragment();
-                }else if(mainActivityDataViewModel.getClickedValue().equals("loadMenuFragment()")) {
-                     loadMenuFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadMenuFragment()")) {
+                    loadMenuFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadAvatarListFragment()")) {
+                    loadAvatarListFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadMarkerListFragment()")) {
+                    loadMarkerListFragment();
                 }
             }
         });
@@ -42,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadMenuFragment() {
         FragmentManager fm = getSupportFragmentManager();
-        Fragment menuFrag = fm.findFragmentById(R.id.menuFragmentId);
+        Fragment menuFrag = fm.findFragmentById(R.id.main_container);
 
         if(menuFrag == null) {
             fm.beginTransaction().add(R.id.main_container, menuFragment).commit();
@@ -51,14 +59,47 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void loadGameSettingsFragment() {
+    public void loadPlayGameSettingsFragment() {
         FragmentManager fm = getSupportFragmentManager();
-        Fragment menuFrag = fm.findFragmentById(R.id.main_container);
+        Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
 
-        if(menuFrag == null) {
-            fm.beginTransaction().add(R.id.main_container, gameSettingsFragment).commit();
+        if(playGameSettingsFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, gameSettingsPlay).commit();
         } else {
-            fm.beginTransaction().replace(R.id.main_container, gameSettingsFragment).commit();
+            fm.beginTransaction().replace(R.id.main_container, gameSettingsPlay).commit();
+        }
+    }
+
+    public void loadMarkerListFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment markerListFrag = fm.findFragmentById(R.id.main_container);
+
+        if(markerListFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, markerListFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, markerListFragment).commit();
+        }
+    }
+
+    public void loadAvatarListFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment avatarListFrag = fm.findFragmentById(R.id.main_container);
+
+        if(avatarListFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, avatarListFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, avatarListFragment).commit();
+        }
+    }
+
+    public void loadPersonalisationFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment personalisationFrag = fm.findFragmentById(R.id.main_container);
+
+        if(personalisationFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, personalisationFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, personalisationFragment).commit();
         }
     }
 

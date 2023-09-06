@@ -52,6 +52,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHeight_percent=".5"
             app:layout_constraintTop_toBottomOf="@+id/laughingAvatar"
+            app:layout_constraintStart_toEndOf="@+id/wojakAvatar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0.5"
             app:layout_constraintWidth_percent=".5"
             tools:layout_editor_absoluteX="205dp" />
@@ -64,6 +66,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHeight_percent=".5"
             app:layout_constraintTop_toBottomOf="@+id/gigachadAvatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pepeAvatar"
             app:layout_constraintVertical_bias="0.5"
             app:layout_constraintWidth_percent=".5"
             tools:layout_editor_absoluteX="0dp" />
