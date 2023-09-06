@@ -12,10 +12,10 @@ import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link GameSettingsFragment#newInstance} factory method to
+ * Use the {@link GameSettingsInGame#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GameSettingsFragment extends Fragment {
+public class GameSettingsInGame extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class GameSettingsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public GameSettingsFragment() {
+    public GameSettingsInGame() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class GameSettingsFragment extends Fragment {
      * @return A new instance of fragment GameSettings.
      */
     // TODO: Rename and change types and number of parameters
-    public static GameSettingsFragment newInstance(String param1, String param2) {
-        GameSettingsFragment fragment = new GameSettingsFragment();
+    public static GameSettingsInGame newInstance(String param1, String param2) {
+        GameSettingsInGame fragment = new GameSettingsInGame();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,10 +60,11 @@ public class GameSettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_game_settings, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_game_settings_in_game, container, false);
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         Button returnBut = rootView.findViewById(R.id.butReturn);
+        Button endGameBut = rootView.findViewById(R.id.butEndGame);
         Button boardBut1 = rootView.findViewById(R.id.butBoard1);
         Button boardBut2 = rootView.findViewById(R.id.butBoard2);
         Button boardBut3 = rootView.findViewById(R.id.butBoard3);
@@ -71,7 +72,7 @@ public class GameSettingsFragment extends Fragment {
         Button streakBut2 = rootView.findViewById(R.id.butStreak2);
         Button streakBut3 = rootView.findViewById(R.id.butStreak3);
 
-        returnBut.setOnClickListener(new View.OnClickListener() {
+        endGameBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setClickedValue("loadMenuFragment()");

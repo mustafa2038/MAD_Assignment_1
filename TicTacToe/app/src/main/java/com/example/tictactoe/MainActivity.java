@@ -3,12 +3,10 @@ package com.example.tictactoe;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
@@ -18,13 +16,13 @@ public class MainActivity extends AppCompatActivity {
     AvatarListFragment avatarListFragment = new AvatarListFragment();
     MarkerListFragment markerListFragment = new MarkerListFragment();
 
-    GameSettingsFragment gameSettingsFragment = new GameSettingsFragment();
+    GameSettingsPlay gameSettingsFragment = new GameSettingsPlay();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loadGameSettingsFragment();
+        loadMenuFragment();
 
 
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(this).get(MainActivityData.class);
@@ -64,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
         Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
 
         if(playGameSettingsFrag == null) {
-            fm.beginTransaction().add(R.id.main_container, gameSettingsPlay).commit();
+            fm.beginTransaction().add(R.id.main_container, gameSettingsFragment).commit();
         } else {
-            fm.beginTransaction().replace(R.id.main_container, gameSettingsPlay).commit();
+            fm.beginTransaction().replace(R.id.main_container, gameSettingsFragment).commit();
         }
     }
 

@@ -19,33 +19,64 @@ public class GameSettingsPlay extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_game_settings_play, container, false);
-
+        View rootView = inflater.inflate(R.layout.fragment_game_settings_play, container, false);
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
-        TextView gameSettingsPlayTitle = view.findViewById(R.id.textView1);
-        TextView gameSettingsPlayBoardSizeTitle = view.findViewById(R.id.textView2);
-        TextView gameSettingsPlayStreaksToWinTitle = view.findViewById(R.id.textView3);
+        Button returnBut = rootView.findViewById(R.id.butReturn);
+        Button playBut = rootView.findViewById(R.id.butPlayGame);
+        Button boardBut1 = rootView.findViewById(R.id.butBoard1);
+        Button boardBut2 = rootView.findViewById(R.id.butBoard2);
+        Button boardBut3 = rootView.findViewById(R.id.butBoard3);
+        Button streakBut1 = rootView.findViewById(R.id.butStreak1);
+        Button streakBut2 = rootView.findViewById(R.id.butStreak2);
+        Button streakBut3 = rootView.findViewById(R.id.butStreak3);
 
-        Button gameSettingsPlay3x3 = view.findViewById(R.id.butBoard1);
-        Button gameSettingsPlay4X4 = view.findViewById(R.id.butBoard2);
-        Button gameSettingsPlay5x5 = view.findViewById(R.id.butBoard3);
-
-        Button gameSettingsPlayStreaks3 = view.findViewById(R.id.butStreak1);
-        Button gameSettingsPlayStreak4 = view.findViewById(R.id.butStreak2);
-        Button gameSettingsPlayStreak5 = view.findViewById(R.id.butStreak3);
-
-        Button gameSettingsPlayReturn = view.findViewById(R.id.butReturn);
-        Button gameSettingsPlayGame = view.findViewById(R.id.butPlayGame);
-
-        gameSettingsPlayReturn.setOnClickListener(new View.OnClickListener() {
+        returnBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setClickedValue("loadMenuFragment()");
             }
         });
 
-        return view;
+        boardBut1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setBoardSize("3x3");
+            }
+        });
+        boardBut2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setBoardSize("4x4");
+            }
+        });
+        boardBut3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setBoardSize("5x5");
+            }
+        });
+        streakBut1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setStreak("3");
+            }
+        });
+
+        streakBut2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setStreak("4");
+            }
+        });
+
+        streakBut3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivityDataViewModel.setStreak("5");
+            }
+        });
+
+        return rootView;
     }
 }
