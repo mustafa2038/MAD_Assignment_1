@@ -6,11 +6,13 @@ public class Player {
     private String playerName;
     private Drawable playerAvatar;
     private Drawable playerMarker;
+    private String playerMarkerName;
 
-    public Player(String playerName, Drawable playerAvatar, Drawable playerMarker) {
+    public Player(String playerName, Drawable playerAvatar, Drawable playerMarker, String playerMarkerName) {
         this.playerName = playerName;
         this.playerAvatar = playerAvatar;
         this.playerMarker = playerMarker;
+        this.playerMarkerName = playerMarkerName;
     }
 
     public String getPlayerName() {
@@ -35,5 +37,13 @@ public class Player {
 
     public void setPlayerMarker(Drawable playerMarker) {
         this.playerMarker = playerMarker;
+    }
+
+    public String getPlayerMarkerName() {
+        return playerMarkerName;
+    }
+
+    public void setPlayer1MarkerName(String playerMarkerName) {
+        this.playerMarkerName = playerMarkerName;
     }
 }

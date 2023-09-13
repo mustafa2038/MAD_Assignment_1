@@ -1,7 +1,6 @@
 package com.example.tictactoe;
 
 import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -15,6 +14,8 @@ public class MainActivityData extends ViewModel {
 
     public MutableLiveData<Drawable> player1AvatarDrawable = new MutableLiveData<Drawable>();
     public MutableLiveData<Drawable> player2AvatarDrawable = new MutableLiveData<Drawable>();
+    public MutableLiveData<String> player1markerName = new MutableLiveData<>("");
+    public MutableLiveData<String> player2markerName = new MutableLiveData<>("");
 
     public MutableLiveData<Drawable> player1MarkerDrawable = new MutableLiveData<>();
     public MutableLiveData<Drawable> player2MarkerDrawable = new MutableLiveData<>();
@@ -79,6 +80,22 @@ public class MainActivityData extends ViewModel {
 
     public void setPlayer2MarkerDrawable(Drawable value) {
         player2MarkerDrawable.setValue(value);
+    }
+
+    public String getPlayer1markerName() {
+        return player1markerName.getValue();
+    }
+
+    public void setPlayer1markerName(String value) {
+        this.player1markerName.setValue(value);
+    }
+
+    public String getPlayer2markerName() {
+        return player2markerName.getValue();
+    }
+
+    public void setPlayer2markerName(String value) {
+        this.player2markerName.setValue(value);
     }
 
     public String getPlayer1Name() {

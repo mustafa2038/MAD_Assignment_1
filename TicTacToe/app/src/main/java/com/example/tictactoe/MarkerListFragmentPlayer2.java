@@ -35,6 +35,7 @@ public class MarkerListFragmentPlayer2 extends Fragment {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setPlayer2MarkerDrawable(circleMarker.getDrawable());
+                mainActivityDataViewModel.setPlayer2markerName("circle");
                 mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
             }
         });
@@ -43,6 +44,7 @@ public class MarkerListFragmentPlayer2 extends Fragment {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setPlayer2MarkerDrawable(crossMarker.getDrawable());
+                mainActivityDataViewModel.setPlayer2markerName("cross");
                 mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
             }
         });
@@ -51,6 +53,7 @@ public class MarkerListFragmentPlayer2 extends Fragment {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setPlayer2MarkerDrawable(crownMarker.getDrawable());
+                mainActivityDataViewModel.setPlayer2markerName("crown");
                 mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
             }
         });
@@ -59,6 +62,7 @@ public class MarkerListFragmentPlayer2 extends Fragment {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setPlayer2MarkerDrawable(swordMarker.getDrawable());
+                mainActivityDataViewModel.setPlayer2markerName("sword");
                 mainActivityDataViewModel.setClickedValue("loadPersonalisationFragment()");
             }
         });
