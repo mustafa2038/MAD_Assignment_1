@@ -5,6 +5,10 @@ import android.graphics.drawable.Drawable;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivityData extends ViewModel {
     public MutableLiveData<String> clickedValue = new MutableLiveData<>();
     public MutableLiveData<String> boardSize = new MutableLiveData<>();
@@ -21,6 +25,8 @@ public class MainActivityData extends ViewModel {
     public MutableLiveData<Drawable> player2MarkerDrawable = new MutableLiveData<>();
     public MutableLiveData<String> boardClicked = new MutableLiveData<>("F");
     public MutableLiveData<String> streakClicked = new MutableLiveData<>("F");
+    public MutableLiveData<Integer> timerCount = new MutableLiveData<>(10);
+    public MutableLiveData<List<String>> boardInfo = new MutableLiveData<>(Arrays.asList("", "", "", "", "", "", "", "", ""));
 
     public MainActivityData() {
         clickedValue.setValue("");
@@ -33,6 +39,10 @@ public class MainActivityData extends ViewModel {
     public void setClickedValue(String value) {
         clickedValue.setValue(value);
     }
+
+    public void setClickedValueBoardInfo(String value1, List<String> value2) {clickedValue.setValue(value1); boardInfo.setValue(value2);}
+
+    public List<String> getBoardInfo(){return boardInfo.getValue();}
 
     public void setBoardSize(String value){
         boardSize.setValue(value);
@@ -118,4 +128,6 @@ public class MainActivityData extends ViewModel {
     public void setBoardClicked(String value){boardClicked.setValue(value);}
     public String getStreakClicked(){return streakClicked.getValue();}
     public void setStreakClicked(String value){streakClicked.setValue(value);}
+    public int getTimerCount(){return timerCount.getValue();}
+    public void setTimerCount(int value){timerCount.setValue(value);}
 }

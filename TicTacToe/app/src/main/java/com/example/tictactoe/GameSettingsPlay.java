@@ -69,8 +69,9 @@ public class GameSettingsPlay extends Fragment {
         playBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                    mainActivityDataViewModel.setClickedValue("loadGameFragment()");
+                mainActivityDataViewModel.setBoardClicked("F");
+                mainActivityDataViewModel.setStreakClicked("F");
+                mainActivityDataViewModel.setClickedValue("loadGameFragment()");
 
             }
         });

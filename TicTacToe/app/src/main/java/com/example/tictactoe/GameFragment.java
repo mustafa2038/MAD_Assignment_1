@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,10 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class GameFragment extends Fragment {
     Player player1;
     Player player2;
@@ -23,7 +29,12 @@ public class GameFragment extends Fragment {
 
     int player1markerid = R.drawable.circle;
     int player2markerid = R.drawable.cross;
+    private Handler timerHandler;
+    private Runnable timerRunnable;
+    private boolean timerPaused = false;
+    private List<String> boardInfo =  new ArrayList<>();
 
+    private int timerCount = 10;
     public GameFragment() {
         // Required empty public constructor
     }
@@ -35,6 +46,11 @@ public class GameFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_game, container, false);
 
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
+        boardInfo = mainActivityDataViewModel.getBoardInfo();
+
+        timerHandler = new Handler(Looper.getMainLooper());
+        timerCount = 10;
 
         player1 = new Player(mainActivityDataViewModel.getPlayer1Name(), mainActivityDataViewModel.getPlayer1AvatarDrawable(),
                 mainActivityDataViewModel.getPlayer1MarkerDrawable(), mainActivityDataViewModel.getPlayer1markerName());
@@ -82,10 +98,113 @@ public class GameFragment extends Fragment {
         Button settingButton = view.findViewById(R.id.settingButton);
         Button restartButton = view.findViewById(R.id.restartButton);
 
+
+        timerRunnable = new Runnable() {
+            @Override
+            public void run() {
+                if (!timerPaused) { // Check if the timer is not paused
+                    // Update the timerCountTextView
+                    timerCountTextView.setText(String.valueOf(timerCount));
+
+                    // Decrement the timer count
+                    timerCount--;
+
+                    // Check if the timer has reached 0
+                    if (timerCount >=0) {
+                        // Schedule the next update in 1 second
+                        timerHandler.postDelayed(this, 1000);
+                    } else {
+                        if(player1active) {
+                            player1active = false;
+                            player2active = true;
+                            playerIndicatorTextView.setText("Player 2 Turn");
+                        } else {
+                            player2active = false;
+                            player1active = true;
+                            playerIndicatorTextView.setText("Player 1 Turn");
+                        }
+                        timerCount = 10;
+                    }
+                } else {
+                    // Timer is paused, do nothing for now
+                }
+            }
+        };
+        timerHandler.postDelayed(timerRunnable, 1000);
+
+
+            for (int i = 0; i < boardInfo.size(); i++)
+            {
+                String element = boardInfo.get(i);
+                if (element.equals("p1"))
+                {
+                    if(i==0)
+                    {
+                        button0.setImageResource(player1markerid);
+                    }else if(i==1)
+                    {
+                        button1.setImageResource(player1markerid);
+                    }else if(i==2)
+                    {
+                        button2.setImageResource(player1markerid);
+                    }else if(i==3)
+                    {
+                        button3.setImageResource(player1markerid);
+                    }else if(i==4)
+                    {
+                        button4.setImageResource(player1markerid);
+                    }else if(i==5)
+                    {
+                        button5.setImageResource(player1markerid);
+                    }else if(i==6)
+                    {
+                        button6.setImageResource(player1markerid);
+                    }else if(i==7)
+                    {
+                        button7.setImageResource(player1markerid);
+                    }else if(i==8)
+                    {
+                        button8.setImageResource(player1markerid);
+                    }
+                }else if (element.equals("p2"))
+                {
+                    if(i==0)
+                    {
+                        button0.setImageResource(player2markerid);
+                    }else if(i==1)
+                    {
+                        button1.setImageResource(player2markerid);
+                    }else if(i==2)
+                    {
+                        button2.setImageResource(player2markerid);
+                    }else if(i==3)
+                    {
+                        button3.setImageResource(player2markerid);
+                    }else if(i==4)
+                    {
+                        button4.setImageResource(player2markerid);
+                    }else if(i==5)
+                    {
+                        button5.setImageResource(player2markerid);
+                    }else if(i==6)
+                    {
+                        button6.setImageResource(player2markerid);
+                    }else if(i==7)
+                    {
+                        button7.setImageResource(player2markerid);
+                    }else if(i==8)
+                    {
+                        button8.setImageResource(player2markerid);
+                    }
+                }
+            }
+
+
+
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue("loadInGameSettingsFragment()");
+                mainActivityDataViewModel.setClickedValueBoardInfo("loadInGameSettingsFragment()", boardInfo);
             }
         });
 
@@ -103,8 +222,6 @@ public class GameFragment extends Fragment {
                 button8.setImageResource(android.R.color.transparent);
 
                 playerIndicatorTextView.setText("Player 1 Turn");
-
-                timerCountTextView.setText("0:10");
                 turnCountTextView.setText("5");
             }
         });
@@ -112,13 +229,17 @@ public class GameFragment extends Fragment {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button0.setImageResource(player1markerid);
+                    boardInfo.set(0,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button0.setImageResource(player2markerid);
+                    boardInfo.set(0,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -129,13 +250,17 @@ public class GameFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button1.setImageResource(player1markerid);
+                    boardInfo.set(1,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button1.setImageResource(player2markerid);
+                    boardInfo.set(1,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -146,13 +271,17 @@ public class GameFragment extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button2.setImageResource(player1markerid);
+                    boardInfo.set(2,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button2.setImageResource(player2markerid);
+                    boardInfo.set(2,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -163,13 +292,17 @@ public class GameFragment extends Fragment {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button3.setImageResource(player1markerid);
+                    boardInfo.set(3,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button3.setImageResource(player2markerid);
+                    boardInfo.set(3,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -179,13 +312,17 @@ public class GameFragment extends Fragment {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button4.setImageResource(player1markerid);
+                    boardInfo.set(4,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button4.setImageResource(player2markerid);
+                    boardInfo.set(4,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -195,13 +332,17 @@ public class GameFragment extends Fragment {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button5.setImageResource(player1markerid);
+                    boardInfo.set(5,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button5.setImageResource(player2markerid);
+                    boardInfo.set(5,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -211,13 +352,17 @@ public class GameFragment extends Fragment {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button6.setImageResource(player1markerid);
+                    boardInfo.set(6,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button6.setImageResource(player2markerid);
+                    boardInfo.set(6,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -227,13 +372,17 @@ public class GameFragment extends Fragment {
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button7.setImageResource(player1markerid);
+                    boardInfo.set(7,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button7.setImageResource(player2markerid);
+                    boardInfo.set(7,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");
@@ -243,13 +392,17 @@ public class GameFragment extends Fragment {
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timerCount = 10;
+
                 if(player1active) {
                     button8.setImageResource(player1markerid);
+                    boardInfo.set(8,"p1");
                     player1active = false;
                     player2active = true;
                     playerIndicatorTextView.setText("Player 2 Turn");
                 } else {
                     button8.setImageResource(player2markerid);
+                    boardInfo.set(8,"p2");
                     player2active = false;
                     player1active = true;
                     playerIndicatorTextView.setText("Player 1 Turn");

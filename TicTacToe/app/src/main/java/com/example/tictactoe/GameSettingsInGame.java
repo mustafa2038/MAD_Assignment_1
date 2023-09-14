@@ -75,7 +75,7 @@ public class GameSettingsInGame extends Fragment {
         endGameBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue("loadMenuFragment()");
+                mainActivityDataViewModel.setClickedValue("loadExitGameConfirmFragment()");
             }
         });
         returnBut.setOnClickListener(new View.OnClickListener() {

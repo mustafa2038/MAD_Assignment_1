@@ -189,7 +189,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/timerTextView"
 
-            android:text="@string/timer_count_string"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"/>

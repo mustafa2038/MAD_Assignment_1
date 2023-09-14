@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     MarkerListFragment markerListFragment = new MarkerListFragment();
     MarkerListFragmentPlayer2 markerListFragmentPlayer2 = new MarkerListFragmentPlayer2();
     LeaderboardFragment leaderboardFragment = new LeaderboardFragment();
+    ExitGameConfirmFragment exitGameConfirmFragment = new ExitGameConfirmFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     loadInGameSettingsFragment();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragment()")) {
                     loadGameFragment();
+                } else if(mainActivityDataViewModel.getClickedValue().equals("loadExitGameConfirmFragment()")) {
+                loadExitGameConfirmFragment();
                 }
+
             }
         });
     }
@@ -150,13 +154,15 @@ public class MainActivity extends AppCompatActivity {
     public void loadGameFragment() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment gameFrag = fm.findFragmentById(R.id.main_container);
+        GameFragment newGameFragment = new GameFragment();
 
         if(gameFrag == null) {
-            fm.beginTransaction().add(R.id.main_container, gameFragment).commit();
+            fm.beginTransaction().add(R.id.main_container, newGameFragment).commit();
         } else {
-            fm.beginTransaction().replace(R.id.main_container, gameFragment).commit();
+            fm.beginTransaction().replace(R.id.main_container, newGameFragment).commit();
         }
     }
+
 
     public void loadLeaderboardFragment() {
         FragmentManager fm = getSupportFragmentManager();
@@ -166,6 +172,17 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, leaderboardFragment).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, leaderboardFragment).commit();
+        }
+    }
+
+    public void loadExitGameConfirmFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
+
+        if(playGameSettingsFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, exitGameConfirmFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, exitGameConfirmFragment).commit();
         }
     }
 }
