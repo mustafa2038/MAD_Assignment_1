@@ -81,6 +81,7 @@ public class GameSettingsInGame extends Fragment {
         returnBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mainActivityDataViewModel.setBoardInfoPresent(true);
                 mainActivityDataViewModel.setClickedValue("loadGameFragment()");
             }
         });

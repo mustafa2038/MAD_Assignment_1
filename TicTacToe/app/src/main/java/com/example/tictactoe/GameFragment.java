@@ -124,6 +124,7 @@ public class GameFragment extends Fragment {
                             playerIndicatorTextView.setText("Player 1 Turn");
                         }
                         timerCount = 10;
+                        timerHandler.postDelayed(this, 1000);
                     }
                 } else {
                     // Timer is paused, do nothing for now
@@ -132,79 +133,61 @@ public class GameFragment extends Fragment {
         };
         timerHandler.postDelayed(timerRunnable, 1000);
 
-
-            for (int i = 0; i < boardInfo.size(); i++)
-            {
+        if(mainActivityDataViewModel.getBoardInfoPresent())
+        {
+            for (int i = 0; i < boardInfo.size(); i++) {
                 String element = boardInfo.get(i);
-                if (element.equals("p1"))
-                {
-                    if(i==0)
-                    {
+                if (element.equals("p1")) {
+                    if (i == 0) {
                         button0.setImageResource(player1markerid);
-                    }else if(i==1)
-                    {
+                    } else if (i == 1) {
                         button1.setImageResource(player1markerid);
-                    }else if(i==2)
-                    {
+                    } else if (i == 2) {
                         button2.setImageResource(player1markerid);
-                    }else if(i==3)
-                    {
+                    } else if (i == 3) {
                         button3.setImageResource(player1markerid);
-                    }else if(i==4)
-                    {
+                    } else if (i == 4) {
                         button4.setImageResource(player1markerid);
-                    }else if(i==5)
-                    {
+                    } else if (i == 5) {
                         button5.setImageResource(player1markerid);
-                    }else if(i==6)
-                    {
+                    } else if (i == 6) {
                         button6.setImageResource(player1markerid);
-                    }else if(i==7)
-                    {
+                    } else if (i == 7) {
                         button7.setImageResource(player1markerid);
-                    }else if(i==8)
-                    {
+                    } else if (i == 8) {
                         button8.setImageResource(player1markerid);
                     }
-                }else if (element.equals("p2"))
-                {
-                    if(i==0)
-                    {
+                } else if (element.equals("p2")) {
+                    if (i == 0) {
                         button0.setImageResource(player2markerid);
-                    }else if(i==1)
-                    {
+                    } else if (i == 1) {
                         button1.setImageResource(player2markerid);
-                    }else if(i==2)
-                    {
+                    } else if (i == 2) {
                         button2.setImageResource(player2markerid);
-                    }else if(i==3)
-                    {
+                    } else if (i == 3) {
                         button3.setImageResource(player2markerid);
-                    }else if(i==4)
-                    {
+                    } else if (i == 4) {
                         button4.setImageResource(player2markerid);
-                    }else if(i==5)
-                    {
+                    } else if (i == 5) {
                         button5.setImageResource(player2markerid);
-                    }else if(i==6)
-                    {
+                    } else if (i == 6) {
                         button6.setImageResource(player2markerid);
-                    }else if(i==7)
-                    {
+                    } else if (i == 7) {
                         button7.setImageResource(player2markerid);
-                    }else if(i==8)
-                    {
+                    } else if (i == 8) {
                         button8.setImageResource(player2markerid);
                     }
                 }
             }
+        }
 
 
 
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValueBoardInfo("loadInGameSettingsFragment()", boardInfo);
+                mainActivityDataViewModel.setBoardInfo(boardInfo);
+                mainActivityDataViewModel.setClickedValue("loadInGameSettingsFragment()");
             }
         });
 

@@ -27,7 +27,7 @@ public class MainActivityData extends ViewModel {
     public MutableLiveData<String> streakClicked = new MutableLiveData<>("F");
     public MutableLiveData<Integer> timerCount = new MutableLiveData<>(10);
     public MutableLiveData<List<String>> boardInfo = new MutableLiveData<>(Arrays.asList("", "", "", "", "", "", "", "", ""));
-
+    public MutableLiveData <Boolean> boardInfoPresent = new MutableLiveData(false);
     public MainActivityData() {
         clickedValue.setValue("");
     }
@@ -40,9 +40,15 @@ public class MainActivityData extends ViewModel {
         clickedValue.setValue(value);
     }
 
-    public void setClickedValueBoardInfo(String value1, List<String> value2) {clickedValue.setValue(value1); boardInfo.setValue(value2);}
+    public Boolean getBoardInfoPresent() {return boardInfoPresent.getValue();}
+
+    public void setBoardInfoPresent(Boolean value) {boardInfoPresent.setValue(value);}
+
+    public void setBoardInfo(List<String> value) {boardInfo.setValue(value);}
 
     public List<String> getBoardInfo(){return boardInfo.getValue();}
+
+    public void resetBoardInfo(){boardInfo.setValue(Arrays.asList("", "", "", "", "", "", "", "", ""));}
 
     public void setBoardSize(String value){
         boardSize.setValue(value);

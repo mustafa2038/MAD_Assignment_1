@@ -71,6 +71,8 @@ public class GameSettingsPlay extends Fragment {
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardClicked("F");
                 mainActivityDataViewModel.setStreakClicked("F");
+                mainActivityDataViewModel.setBoardInfoPresent(false);
+                mainActivityDataViewModel.resetBoardInfo();
                 mainActivityDataViewModel.setClickedValue("loadGameFragment()");
 
             }
