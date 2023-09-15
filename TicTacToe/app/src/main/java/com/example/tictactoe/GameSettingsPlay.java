@@ -35,9 +35,6 @@ public class GameSettingsPlay extends Fragment {
 
 
 
-
-
-
         mainActivityDataViewModel.boardClicked.observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String str) {

@@ -10,6 +10,9 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
+    GameFragmentSinglePlayer gameFragmentSinglePlayer = new GameFragmentSinglePlayer();
+    GameFragmentSP2 gameFragmentSP2 = new GameFragmentSP2();
+    GameFragmentSP3 gameFragmentSP3 = new GameFragmentSP3();
     GameFragmentMultiplayer gameFragmentMultiplayer = new GameFragmentMultiplayer();
     GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
     GameSettingsInGame gameSettingsInGame = new GameSettingsInGame();
@@ -56,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
                     loadGameFragmentMultiplayer();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSinglePlayer()")) {
                     loadGameFragmentSinglePlayer();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSP2()")) {
+                    loadGameFragmentSP2();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSP3()")) {
+                    loadGameFragmentSP3();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadExitGameConfirmFragment()")) {
                     loadExitGameConfirmFragment();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadEndScreenFragment()")) {
@@ -178,6 +185,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void loadGameFragmentSP2() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment gameFrag = fm.findFragmentById(R.id.main_container);
+        GameFragmentSP2 newGameFragmentSP2 = new GameFragmentSP2();
+
+        if(gameFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentSP2).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentSP2).commit();
+        }
+    }
+
+    public void loadGameFragmentSP3() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment gameFrag = fm.findFragmentById(R.id.main_container);
+        GameFragmentSP3 newGameFragmentSP3 = new GameFragmentSP3();
+
+        if(gameFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentSP3).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentSP3).commit();
+        }
+    }
 
     public void loadLeaderboardFragment() {
         FragmentManager fm = getSupportFragmentManager();
