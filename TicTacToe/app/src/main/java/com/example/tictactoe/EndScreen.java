@@ -5,14 +5,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class EndScreen extends Fragment {
-
-    private TextView winnerText;
-    private ImageView winnerImage;
-    private TextView scoreValue;
+    private String playerName;
+    private int playerImage;
 
     public EndScreen() {
         // Required empty public constructor
@@ -21,32 +20,37 @@ public class EndScreen extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_end_screen, container, false);
 
-        // Initialize UI elements
-        winnerText = view.findViewById(R.id.winnerText);
-        winnerImage = view.findViewById(R.id.winnerImage);
-        scoreValue = view.findViewById(R.id.scoreValue);
+        // Retrieve player name and player image from arguments
+        Bundle args = getArguments();
+        if (args != null) {
+            playerName = args.getString("playerName", "");
+            playerImage = args.getInt("playerImage", 0);
+        }
 
-        // Get player data (replace with your actual player data retrieval logic)
-        //Player winner = getPlayerData(); // Replace with actual logic to get the winner
-        //int score = winner.getScore(); // Replace with logic to get the score
+        // Update UI elements in the end screen
+        TextView winnerText = view.findViewById(R.id.winnerText);
+        ImageView winnerImage = view.findViewById(R.id.winnerImage);
 
-        // Set winner text
-        //winnerText.setText(winner.getName() + " wins!");
+        // Set the winner text
+        winnerText.setText(playerName + " wins!");
 
-        // Set winner image (assuming you have a drawable resource ID for the winner's image)
-        //winnerImage.setImageResource(winner.getImageResourceId());
+        // Set the winner image (replace R.drawable.WinnerImage with your actual image resource)
+        winnerImage.setImageResource(playerImage);
 
-        // Set score
-        //scoreValue.setText(String.valueOf(score));
+        // Button to return to the menu fragment
+        Button backButton = view.findViewById(R.id.buttonBack);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace the current fragment with the menu fragment
+                ((MainActivity) requireActivity()).loadMenuFragment();
+            }
+        });
 
         return view;
     }
 
-    // Replace this method with actual logic to get player data
-    //private Player getPlayerData() {
-        // Example: Create a player with name, image resource ID, and score
-        //return new Player("Player X", R.drawable.player_x, 100);
-    //}
 }

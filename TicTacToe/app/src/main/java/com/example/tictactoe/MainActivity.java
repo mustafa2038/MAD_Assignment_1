@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     MarkerListFragmentPlayer2 markerListFragmentPlayer2 = new MarkerListFragmentPlayer2();
     LeaderboardFragment leaderboardFragment = new LeaderboardFragment();
     ExitGameConfirmFragment exitGameConfirmFragment = new ExitGameConfirmFragment();
+    EndScreen endScreenFragment = new EndScreen();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     loadGameFragmentSinglePlayer();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadExitGameConfirmFragment()")) {
                     loadExitGameConfirmFragment();
-                }
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadEndScreenFragment()")) {
+                    loadEndScreenFragment();
+            }
 
             }
         });
@@ -195,6 +198,17 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, exitGameConfirmFragment).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, exitGameConfirmFragment).commit();
+        }
+    }
+
+    public void loadEndScreenFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment playGameSettingsFrag = fm.findFragmentById(R.id.main_container);
+
+        if(playGameSettingsFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, endScreenFragment).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, endScreenFragment).commit();
         }
     }
 }
