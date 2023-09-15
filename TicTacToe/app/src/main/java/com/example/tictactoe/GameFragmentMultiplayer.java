@@ -208,20 +208,22 @@ public class GameFragmentMultiplayer extends Fragment {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
-
-                if(player1active) {
-                    button0.setImageResource(player1markerid);
-                    boardInfo.set(0,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button0.setImageResource(player2markerid);
-                    boardInfo.set(0,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                if(button0.getDrawable() == null)
+                {
+                    timerCount = 10;
+                    if (player1active) {
+                        button0.setImageResource(player1markerid);
+                        boardInfo.set(0, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button0.setImageResource(player2markerid);
+                        boardInfo.set(0, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
@@ -229,20 +231,23 @@ public class GameFragmentMultiplayer extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
 
-                if(player1active) {
-                    button1.setImageResource(player1markerid);
-                    boardInfo.set(1,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button1.setImageResource(player2markerid);
-                    boardInfo.set(1,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                if(button1.getDrawable() == null) {
+                    timerCount = 10;
+
+                    if (player1active) {
+                        button1.setImageResource(player1markerid);
+                        boardInfo.set(1, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button1.setImageResource(player2markerid);
+                        boardInfo.set(1, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
@@ -250,20 +255,23 @@ public class GameFragmentMultiplayer extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
 
-                if(player1active) {
-                    button2.setImageResource(player1markerid);
-                    boardInfo.set(2,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button2.setImageResource(player2markerid);
-                    boardInfo.set(2,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                if(button2.getDrawable() == null) {
+                    timerCount = 10;
+
+                    if (player1active) {
+                        button2.setImageResource(player1markerid);
+                        boardInfo.set(2, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button2.setImageResource(player2markerid);
+                        boardInfo.set(2, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
@@ -271,120 +279,133 @@ public class GameFragmentMultiplayer extends Fragment {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
 
-                if(player1active) {
-                    button3.setImageResource(player1markerid);
-                    boardInfo.set(3,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button3.setImageResource(player2markerid);
-                    boardInfo.set(3,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                if(button3.getDrawable() == null) {
+                    timerCount = 10;
+
+                    if (player1active) {
+                        button3.setImageResource(player1markerid);
+                        boardInfo.set(3, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button3.setImageResource(player2markerid);
+                        boardInfo.set(3, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
+                if(button4.getDrawable() == null) {
+                    timerCount = 10;
 
-                if(player1active) {
-                    button4.setImageResource(player1markerid);
-                    boardInfo.set(4,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button4.setImageResource(player2markerid);
-                    boardInfo.set(4,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                    if (player1active) {
+                        button4.setImageResource(player1markerid);
+                        boardInfo.set(4, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button4.setImageResource(player2markerid);
+                        boardInfo.set(4, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
+                if(button5.getDrawable() == null) {
+                    timerCount = 10;
 
-                if(player1active) {
-                    button5.setImageResource(player1markerid);
-                    boardInfo.set(5,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button5.setImageResource(player2markerid);
-                    boardInfo.set(5,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                    if (player1active) {
+                        button5.setImageResource(player1markerid);
+                        boardInfo.set(5, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button5.setImageResource(player2markerid);
+                        boardInfo.set(5, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
+                if(button6.getDrawable() == null) {
+                    timerCount = 10;
 
-                if(player1active) {
-                    button6.setImageResource(player1markerid);
-                    boardInfo.set(6,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button6.setImageResource(player2markerid);
-                    boardInfo.set(6,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                    if (player1active) {
+                        button6.setImageResource(player1markerid);
+                        boardInfo.set(6, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button6.setImageResource(player2markerid);
+                        boardInfo.set(6, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
+                if(button7.getDrawable() == null) {
+                    timerCount = 10;
 
-                if(player1active) {
-                    button7.setImageResource(player1markerid);
-                    boardInfo.set(7,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button7.setImageResource(player2markerid);
-                    boardInfo.set(7,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                    if (player1active) {
+                        button7.setImageResource(player1markerid);
+                        boardInfo.set(7, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button7.setImageResource(player2markerid);
+                        boardInfo.set(7, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timerCount = 10;
+                if(button8.getDrawable() == null) {
+                    timerCount = 10;
 
-                if(player1active) {
-                    button8.setImageResource(player1markerid);
-                    boardInfo.set(8,"p1");
-                    player1active = false;
-                    player2active = true;
-                    playerIndicatorTextView.setText("Player 2 Turn");
-                } else {
-                    button8.setImageResource(player2markerid);
-                    boardInfo.set(8,"p2");
-                    player2active = false;
-                    player1active = true;
-                    playerIndicatorTextView.setText("Player 1 Turn");
+                    if (player1active) {
+                        button8.setImageResource(player1markerid);
+                        boardInfo.set(8, "p1");
+                        player1active = false;
+                        player2active = true;
+                        playerIndicatorTextView.setText("Player 2 Turn");
+                    } else {
+                        button8.setImageResource(player2markerid);
+                        boardInfo.set(8, "p2");
+                        player2active = false;
+                        player1active = true;
+                        playerIndicatorTextView.setText("Player 1 Turn");
+                    }
                 }
             }
         });
