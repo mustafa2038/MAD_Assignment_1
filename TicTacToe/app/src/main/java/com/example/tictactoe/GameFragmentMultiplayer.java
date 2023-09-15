@@ -208,31 +208,41 @@ public class GameFragmentMultiplayer extends Fragment {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button0.getDrawable() == null)
-                {
+                if (button0.getDrawable() == null) {
                     timerCount = 10;
+
                     if (player1active) {
                         button0.setImageResource(player1markerid);
                         boardInfo.set(0, "p1");
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button0.setImageResource(player2markerid);
                         boardInfo.set(0, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
 
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if(button1.getDrawable() == null) {
+                if (button1.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -241,12 +251,22 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button1.setImageResource(player2markerid);
                         boardInfo.set(1, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
@@ -255,8 +275,7 @@ public class GameFragmentMultiplayer extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if(button2.getDrawable() == null) {
+                if (button2.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -265,22 +284,32 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button2.setImageResource(player2markerid);
                         boardInfo.set(2, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
 
+
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if(button3.getDrawable() == null) {
+                if (button3.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -289,20 +318,31 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button3.setImageResource(player2markerid);
                         boardInfo.set(3, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
+
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button4.getDrawable() == null) {
+                if (button4.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -311,20 +351,31 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button4.setImageResource(player2markerid);
                         boardInfo.set(4, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
+
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button5.getDrawable() == null) {
+                if (button5.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -333,20 +384,31 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button5.setImageResource(player2markerid);
                         boardInfo.set(5, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
+
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button6.getDrawable() == null) {
+                if (button6.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -355,20 +417,31 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button6.setImageResource(player2markerid);
                         boardInfo.set(6, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
+
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button7.getDrawable() == null) {
+                if (button7.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -377,20 +450,31 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button7.setImageResource(player2markerid);
                         boardInfo.set(7, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
+
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button8.getDrawable() == null) {
+                if (button8.getDrawable() == null) {
                     timerCount = 10;
 
                     if (player1active) {
@@ -399,22 +483,50 @@ public class GameFragmentMultiplayer extends Fragment {
                         player1active = false;
                         player2active = true;
                         playerIndicatorTextView.setText("Player 2 Turn");
-                    } else {
+
+                        if (checkForWin("p1")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        } else if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
+                    } else if (player2active) {
                         button8.setImageResource(player2markerid);
                         boardInfo.set(8, "p2");
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        if (checkForWin("p2")) {
+                            ((MainActivity) requireActivity()).loadEndScreenFragment();
+                        }
                     }
                 }
             }
         });
 
-
-
-
-
-
         return view;
+    }
+    private boolean checkForWin(String playerMarker) {
+        // Define the winning combinations
+        int[][] winCombinations = {
+                {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // Rows
+                {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // Columns
+                {0, 4, 8}, {2, 4, 6}             // Diagonals
+        };
+
+        // Check each winning combination
+        for (int[] combination : winCombinations) {
+            int firstCell = combination[0];
+            int secondCell = combination[1];
+            int thirdCell = combination[2];
+
+            if (boardInfo.get(firstCell).equals(playerMarker) &&
+                    boardInfo.get(secondCell).equals(playerMarker) &&
+                    boardInfo.get(thirdCell).equals(playerMarker)) {
+                return true; // Player has won
+            }
+        }
+
+        return false; // No winning combination found
     }
 }
