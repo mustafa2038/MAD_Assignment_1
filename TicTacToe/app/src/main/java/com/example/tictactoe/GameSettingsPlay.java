@@ -73,7 +73,15 @@ public class GameSettingsPlay extends Fragment {
                 mainActivityDataViewModel.setStreakClicked("F");
                 mainActivityDataViewModel.setBoardInfoPresent(false);
                 mainActivityDataViewModel.resetBoardInfo();
-                mainActivityDataViewModel.setClickedValue("loadGameFragment()");
+               // mainActivityDataViewModel.setClickedValue("loadGameFragment()");
+                if(mainActivityDataViewModel.getGameMode().equals("Singleplayer"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSinglePlayer()");
+                }
+                else if(mainActivityDataViewModel.getGameMode().equals("Multiplayer"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMultiPlayer()");
+                }
 
             }
         });

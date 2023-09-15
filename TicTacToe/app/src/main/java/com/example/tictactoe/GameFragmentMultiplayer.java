@@ -1,6 +1,5 @@
 package com.example.tictactoe;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,13 +14,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class GameFragment extends Fragment {
+public class GameFragmentMultiplayer extends Fragment {
     Player player1;
     Player player2;
     boolean player1active = true;
@@ -35,7 +31,7 @@ public class GameFragment extends Fragment {
     private List<String> boardInfo =  new ArrayList<>();
 
     private int timerCount = 10;
-    public GameFragment() {
+    public GameFragmentMultiplayer() {
         // Required empty public constructor
     }
 

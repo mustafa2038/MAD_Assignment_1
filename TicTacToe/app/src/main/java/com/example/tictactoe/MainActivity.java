@@ -3,16 +3,14 @@ package com.example.tictactoe;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
-    GameFragment gameFragment = new GameFragment();
+    GameFragmentMultiplayer gameFragmentMultiplayer = new GameFragmentMultiplayer();
     GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
     GameSettingsInGame gameSettingsInGame = new GameSettingsInGame();
     PersonalisationFragment personalisationFragment = new PersonalisationFragment();
@@ -53,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
                     loadMarkerListFragmentPlayer2();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadInGameSettingsFragment()")) {
                     loadInGameSettingsFragment();
-                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragment()")) {
-                    loadGameFragment();
-                } else if(mainActivityDataViewModel.getClickedValue().equals("loadExitGameConfirmFragment()")) {
-                loadExitGameConfirmFragment();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentMultiPlayer()")) {
+                    loadGameFragmentMultiplayer();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSinglePlayer()")) {
+                    loadGameFragmentSinglePlayer();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadExitGameConfirmFragment()")) {
+                    loadExitGameConfirmFragment();
                 }
 
             }
@@ -151,15 +151,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void loadGameFragment() {
+    public void loadGameFragmentMultiplayer() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment gameFrag = fm.findFragmentById(R.id.main_container);
-        GameFragment newGameFragment = new GameFragment();
+        GameFragmentMultiplayer newGameFragmentMultiplayer = new GameFragmentMultiplayer();
 
         if(gameFrag == null) {
-            fm.beginTransaction().add(R.id.main_container, newGameFragment).commit();
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentMultiplayer).commit();
         } else {
-            fm.beginTransaction().replace(R.id.main_container, newGameFragment).commit();
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentMultiplayer).commit();
+        }
+    }
+
+    public void loadGameFragmentSinglePlayer() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment gameFrag = fm.findFragmentById(R.id.main_container);
+        GameFragmentSinglePlayer newGameFragmentSinglePlayer = new GameFragmentSinglePlayer();
+
+        if(gameFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentSinglePlayer).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentSinglePlayer).commit();
         }
     }
 

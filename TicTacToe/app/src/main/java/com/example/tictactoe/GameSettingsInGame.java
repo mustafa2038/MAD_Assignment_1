@@ -82,7 +82,15 @@ public class GameSettingsInGame extends Fragment {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardInfoPresent(true);
-                mainActivityDataViewModel.setClickedValue("loadGameFragment()");
+
+                if(mainActivityDataViewModel.getGameMode().equals("Singleplayer"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSinglePlayer()");
+                }else if(mainActivityDataViewModel.getGameMode().equals("Multiplayer"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMultiPlayer()");
+                }
+
             }
         });
         boardBut1.setOnClickListener(new View.OnClickListener() {

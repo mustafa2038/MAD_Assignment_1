@@ -36,6 +36,7 @@ public class MenuFragment extends Fragment {
         singlePlayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mainActivityDataViewModel.setGameMode("Singleplayer");
                 mainActivityDataViewModel.setClickedValue("loadPlayGameSettingsFragment()");
             }
         });
@@ -43,6 +44,7 @@ public class MenuFragment extends Fragment {
         multiplayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mainActivityDataViewModel.setGameMode("Multiplayer");
                 mainActivityDataViewModel.setClickedValue("loadPlayGameSettingsFragment()");
             }
         });
