@@ -5,7 +5,7 @@
     android:id="@+id/gameFragmentId"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameFragmentMultiplayer">
+    tools:context=".GameFragmentMP1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/boardConstraintLayout"

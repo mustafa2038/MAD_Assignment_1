@@ -10,10 +10,10 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     MenuFragment menuFragment = new MenuFragment();
-    GameFragmentSinglePlayer gameFragmentSinglePlayer = new GameFragmentSinglePlayer();
+    GameFragmentSP1 gameFragmentSP1 = new GameFragmentSP1();
     GameFragmentSP2 gameFragmentSP2 = new GameFragmentSP2();
     GameFragmentSP3 gameFragmentSP3 = new GameFragmentSP3();
-    GameFragmentMultiplayer gameFragmentMultiplayer = new GameFragmentMultiplayer();
+    GameFragmentMP1 gameFragmentMP1 = new GameFragmentMP1();
     GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
     GameSettingsInGame gameSettingsInGame = new GameSettingsInGame();
     PersonalisationFragment personalisationFragment = new PersonalisationFragment();
@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     loadMarkerListFragmentPlayer2();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadInGameSettingsFragment()")) {
                     loadInGameSettingsFragment();
-                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentMultiPlayer()")) {
-                    loadGameFragmentMultiplayer();
-                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSinglePlayer()")) {
-                    loadGameFragmentSinglePlayer();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentMP1()")) {
+                    loadGameFragmentMP1();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSP1()")) {
+                    loadGameFragmentSP1();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSP2()")) {
                     loadGameFragmentSP2();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSP3()")) {
@@ -161,27 +161,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void loadGameFragmentMultiplayer() {
+    public void loadGameFragmentMP1() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment gameFrag = fm.findFragmentById(R.id.main_container);
-        GameFragmentMultiplayer newGameFragmentMultiplayer = new GameFragmentMultiplayer();
+        GameFragmentMP1 newGameFragmentMP1 = new GameFragmentMP1();
 
         if(gameFrag == null) {
-            fm.beginTransaction().add(R.id.main_container, newGameFragmentMultiplayer).commit();
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentMP1).commit();
         } else {
-            fm.beginTransaction().replace(R.id.main_container, newGameFragmentMultiplayer).commit();
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentMP1).commit();
         }
     }
 
-    public void loadGameFragmentSinglePlayer() {
+    public void loadGameFragmentSP1() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment gameFrag = fm.findFragmentById(R.id.main_container);
-        GameFragmentSinglePlayer newGameFragmentSinglePlayer = new GameFragmentSinglePlayer();
+        GameFragmentSP1 newGameFragmentSP1 = new GameFragmentSP1();
 
         if(gameFrag == null) {
-            fm.beginTransaction().add(R.id.main_container, newGameFragmentSinglePlayer).commit();
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentSP1).commit();
         } else {
-            fm.beginTransaction().replace(R.id.main_container, newGameFragmentSinglePlayer).commit();
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentSP1).commit();
         }
     }
 

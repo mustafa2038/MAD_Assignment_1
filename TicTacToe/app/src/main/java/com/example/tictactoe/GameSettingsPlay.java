@@ -71,13 +71,24 @@ public class GameSettingsPlay extends Fragment {
                 mainActivityDataViewModel.setBoardInfoPresent(false);
                 mainActivityDataViewModel.resetBoardInfo();
                // mainActivityDataViewModel.setClickedValue("loadGameFragment()");
-                if(mainActivityDataViewModel.getGameMode().equals("Singleplayer"))
+                if(mainActivityDataViewModel.getGameMode().equals("Singleplayer") && mainActivityDataViewModel.getBoardSize().equals("3x3"))
                 {
-                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSinglePlayer()");
-                }
-                else if(mainActivityDataViewModel.getGameMode().equals("Multiplayer"))
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSP1()");
+                }else if(mainActivityDataViewModel.getGameMode().equals("Singleplayer") && mainActivityDataViewModel.getBoardSize().equals("4x4"))
                 {
-                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMultiPlayer()");
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSP2()");
+                }else if(mainActivityDataViewModel.getGameMode().equals("Singleplayer") && mainActivityDataViewModel.getBoardSize().equals("5x5"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSP3()");
+                }else if(mainActivityDataViewModel.getGameMode().equals("Multiplayer")&& mainActivityDataViewModel.getBoardSize().equals("3x3"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMP1()");
+                }else if(mainActivityDataViewModel.getGameMode().equals("Multiplayer")&& mainActivityDataViewModel.getBoardSize().equals("4x4"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMP2()");
+                }else if(mainActivityDataViewModel.getGameMode().equals("Multiplayer")&& mainActivityDataViewModel.getBoardSize().equals("5x5"))
+                {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMP3()");
                 }
 
             }

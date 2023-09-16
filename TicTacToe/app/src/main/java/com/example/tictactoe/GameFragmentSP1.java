@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GameFragmentSinglePlayer extends Fragment {
+public class GameFragmentSP1 extends Fragment {
     Player player1;
     Player player2;
     boolean player1active = true;
@@ -32,7 +32,7 @@ public class GameFragmentSinglePlayer extends Fragment {
     private List<ImageButton> buttonsList = new ArrayList<>();
 
     private int timerCount = 10;
-    public GameFragmentSinglePlayer() {
+    public GameFragmentSP1() {
         // Required empty public constructor
     }
 

@@ -17,7 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameFragmentMultiplayer extends Fragment {
+public class GameFragmentMP1 extends Fragment {
     Player player1;
     Player player2;
     boolean player1active = true;
@@ -31,7 +31,7 @@ public class GameFragmentMultiplayer extends Fragment {
     private List<String> boardInfo =  new ArrayList<>();
 
     private int timerCount = 10;
-    public GameFragmentMultiplayer() {
+    public GameFragmentMP1() {
         // Required empty public constructor
     }
 
