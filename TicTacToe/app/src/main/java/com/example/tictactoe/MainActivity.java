@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     GameFragmentSP2 gameFragmentSP2 = new GameFragmentSP2();
     GameFragmentSP3 gameFragmentSP3 = new GameFragmentSP3();
     GameFragmentMP1 gameFragmentMP1 = new GameFragmentMP1();
+    GameFragmentMP2 gameFragmentMP2 = new GameFragmentMP2();
+    GameFragmentMP3 gameFragmentMP3 = new GameFragmentMP3();
     GameSettingsPlay gameSettingsPlay = new GameSettingsPlay();
     GameSettingsInGame gameSettingsInGame = new GameSettingsInGame();
     PersonalisationFragment personalisationFragment = new PersonalisationFragment();
@@ -57,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
                     loadInGameSettingsFragment();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentMP1()")) {
                     loadGameFragmentMP1();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentMP2()")) {
+                    loadGameFragmentMP2();
+                }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentMP3()")) {
+                    loadGameFragmentMP3();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSP1()")) {
                     loadGameFragmentSP1();
                 }else if(mainActivityDataViewModel.getClickedValue().equals("loadGameFragmentSP2()")) {
@@ -170,6 +176,30 @@ public class MainActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.main_container, newGameFragmentMP1).commit();
         } else {
             fm.beginTransaction().replace(R.id.main_container, newGameFragmentMP1).commit();
+        }
+    }
+
+    public void loadGameFragmentMP2() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment gameFrag = fm.findFragmentById(R.id.main_container);
+        GameFragmentMP2 newGameFragmentMP2 = new GameFragmentMP2();
+
+        if(gameFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentMP2).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentMP2).commit();
+        }
+    }
+
+    public void loadGameFragmentMP3() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment gameFrag = fm.findFragmentById(R.id.main_container);
+        GameFragmentMP3 newGameFragmentMP3 = new GameFragmentMP3();
+
+        if(gameFrag == null) {
+            fm.beginTransaction().add(R.id.main_container, newGameFragmentMP3).commit();
+        } else {
+            fm.beginTransaction().replace(R.id.main_container, newGameFragmentMP3).commit();
         }
     }
 
