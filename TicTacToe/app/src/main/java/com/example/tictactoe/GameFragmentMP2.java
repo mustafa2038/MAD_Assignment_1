@@ -793,9 +793,9 @@ public class GameFragmentMP2 extends Fragment {
     private boolean checkForWin(String playerMarker) {
         // Define the winning combinations for a 4x4 grid
         int[][] winCombinations = {
-                {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}, {12, 13, 14, 15}, // Rows
-                {0, 4, 8, 12}, {1, 5, 9, 13}, {2, 6, 10, 14}, {3, 7, 11, 15}, // Columns
-                {0, 5, 10, 15}, {3, 6, 9, 12} // Diagonals
+                {0, 1, 2, 12}, {3, 4, 5, 13}, {6, 7, 8, 14}, {9, 10, 11, 15}, // Rows
+                {0, 3, 6, 9}, {1, 4, 7, 10}, {2, 5, 8, 11}, {12, 13, 14, 15}, // Columns
+                {0, 4, 8, 15}, {9, 7, 5, 12} // Diagonals
         };
 
         // Check each winning combination
