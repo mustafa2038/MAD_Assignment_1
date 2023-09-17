@@ -65,9 +65,6 @@ public class GameSettingsInGame extends Fragment {
 
         Button returnBut = rootView.findViewById(R.id.butReturn);
         Button endGameBut = rootView.findViewById(R.id.butEndGame);
-        Button boardBut1 = rootView.findViewById(R.id.butBoard1);
-        Button boardBut2 = rootView.findViewById(R.id.butBoard2);
-        Button boardBut3 = rootView.findViewById(R.id.butBoard3);
         Button streakBut1 = rootView.findViewById(R.id.butStreak1);
         Button streakBut2 = rootView.findViewById(R.id.butStreak2);
         Button streakBut3 = rootView.findViewById(R.id.butStreak3);
@@ -93,24 +90,7 @@ public class GameSettingsInGame extends Fragment {
 
             }
         });
-        boardBut1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mainActivityDataViewModel.setBoardSize("3x3");
-            }
-        });
-        boardBut2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mainActivityDataViewModel.setBoardSize("4x4");
-            }
-        });
-        boardBut3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mainActivityDataViewModel.setBoardSize("5x5");
-            }
-        });
+
         streakBut1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

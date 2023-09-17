@@ -48,49 +48,6 @@
             app:layout_constraintGuide_percent=".66" />
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="Board Size"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/butBoard1"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:text="3x3"
-            app:layout_constraintEnd_toStartOf="@id/guideline1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            />
-
-        <Button
-            android:id="@+id/butBoard2"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:text="4x4"
-            app:layout_constraintEnd_toStartOf="@id/guideline2"
-            app:layout_constraintStart_toEndOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            />
-
-        <Button
-            android:id="@+id/butBoard3"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:text="5x5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            />
-
-        <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +55,7 @@
             android:text="Streaks To Win"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/butBoard2"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout1"
             app:layout_constraintBottom_toTopOf="@id/butStreak2"
             />
 
@@ -183,10 +140,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
