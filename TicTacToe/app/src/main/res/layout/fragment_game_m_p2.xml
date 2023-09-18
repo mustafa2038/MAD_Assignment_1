@@ -254,14 +254,14 @@
             android:id="@+id/turnTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent="0.3"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/playerIndicatorTextView"
-            app:layout_constraintBottom_toTopOf="@id/restartButton"
-            android:text="@string/turn_string"
+            android:text="Turn:"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/restartButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playerIndicatorTextView"
+            app:layout_constraintWidth_percent="0.3" />
 
         <TextView
             android:id="@+id/timerCountTextView"
@@ -279,13 +279,13 @@
             android:id="@+id/turnCountTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent="0.3"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/turnTextView"
-            android:text="@string/turn_count_string"
+            android:text="1"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/turnTextView"
+            app:layout_constraintWidth_percent="0.3" />
 
         <Button
             android:id="@+id/undoButton"

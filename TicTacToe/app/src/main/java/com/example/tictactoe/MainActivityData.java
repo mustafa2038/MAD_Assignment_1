@@ -26,6 +26,7 @@ public class MainActivityData extends ViewModel {
     public MutableLiveData<String> boardClicked = new MutableLiveData<>("F");
     public MutableLiveData<String> streakClicked = new MutableLiveData<>("F");
     public MutableLiveData<Integer> timerCount = new MutableLiveData<>(10);
+    public MutableLiveData<Integer> turnCount = new MutableLiveData<>(0);
     public MutableLiveData<List<String>> boardInfo = new MutableLiveData<>(Arrays.asList("", "", "", "", "p", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
     public MutableLiveData <Boolean> boardInfoPresent = new MutableLiveData(false);
     public MutableLiveData<String> gameMode = new MutableLiveData<>("");
@@ -135,6 +136,8 @@ public class MainActivityData extends ViewModel {
     public void setBoardClicked(String value){boardClicked.setValue(value);}
     public String getStreakClicked(){return streakClicked.getValue();}
     public void setStreakClicked(String value){streakClicked.setValue(value);}
+    public int getTurnCount() {return turnCount.getValue();}
+    public void setTurnCount(int value) {turnCount.setValue(value);}
     public int getTimerCount(){return timerCount.getValue();}
     public void setTimerCount(int value){timerCount.setValue(value);}
     public String getGameMode(){return gameMode.getValue();}

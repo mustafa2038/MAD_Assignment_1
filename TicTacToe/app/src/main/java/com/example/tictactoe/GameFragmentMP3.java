@@ -28,6 +28,7 @@ public class GameFragmentMP3 extends Fragment {
     private Handler timerHandler;
     private Runnable timerRunnable;
     private boolean timerPaused = false;
+    private int turnCount;
     private List<String> boardInfo =  new ArrayList<>();
     private List<ImageButton> buttonsList = new ArrayList<>();
 
@@ -48,6 +49,8 @@ public class GameFragmentMP3 extends Fragment {
 
         timerHandler = new Handler(Looper.getMainLooper());
         timerCount = 10;
+        turnCount = 1;
+        mainActivityDataViewModel.setTurnCount(1);
 
         player1 = new Player(mainActivityDataViewModel.getPlayer1Name(), mainActivityDataViewModel.getPlayer1AvatarDrawable(),
                 mainActivityDataViewModel.getPlayer1MarkerDrawable(), mainActivityDataViewModel.getPlayer1markerName());
@@ -155,6 +158,19 @@ public class GameFragmentMP3 extends Fragment {
                         // Schedule the next update in 1 second
                         timerHandler.postDelayed(this, 1000);
                     } else {
+                        if(player1active) {
+                            player1active = false;
+                            player2active = true;
+                            playerIndicatorTextView.setText("Player 2 Turn");
+                        } else {
+                            player2active = false;
+                            player1active = true;
+                            playerIndicatorTextView.setText("Player 1 Turn");
+
+                            turnCount++;
+                            turnCountTextView.setText(Integer.toString(turnCount));
+                            mainActivityDataViewModel.setTurnCount(turnCount);
+                        }
                         timerCount = 10;
                         timerHandler.postDelayed(this, 1000);
                     }
@@ -317,7 +333,9 @@ public class GameFragmentMP3 extends Fragment {
                 button24.setImageResource(android.R.color.transparent);
 
                 playerIndicatorTextView.setText("Player 1 Turn");
-                turnCountTextView.setText("5");
+                turnCount = 1;
+                turnCountTextView.setText(Integer.toString(turnCount));
+                mainActivityDataViewModel.setTurnCount(turnCount);
             }
         });
 
@@ -345,6 +363,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -380,6 +402,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -412,6 +438,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -447,6 +477,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -479,6 +513,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -513,6 +551,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -545,6 +587,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -579,6 +625,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -611,6 +661,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -645,6 +699,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -677,6 +735,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -711,6 +773,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -743,6 +809,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -777,6 +847,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -809,6 +883,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -843,6 +921,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -875,6 +957,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -909,6 +995,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -941,6 +1031,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -975,6 +1069,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -1007,6 +1105,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -1041,6 +1143,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -1073,6 +1179,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
@@ -1107,6 +1217,10 @@ public class GameFragmentMP3 extends Fragment {
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
 
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
@@ -1139,6 +1253,10 @@ public class GameFragmentMP3 extends Fragment {
                         player2active = false;
                         player1active = true;
                         playerIndicatorTextView.setText("Player 1 Turn");
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
 
                         if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();

@@ -28,6 +28,7 @@ public class GameFragmentSP3 extends Fragment {
     private Handler timerHandler;
     private Runnable timerRunnable;
     private boolean timerPaused = false;
+    private int turnCount;
     private List<String> boardInfo =  new ArrayList<>();
     private List<ImageButton> buttonsList = new ArrayList<>();
 
@@ -48,6 +49,8 @@ public class GameFragmentSP3 extends Fragment {
 
         timerHandler = new Handler(Looper.getMainLooper());
         timerCount = 10;
+        turnCount = 1;
+        mainActivityDataViewModel.setTurnCount(1);
 
         player1 = new Player(mainActivityDataViewModel.getPlayer1Name(), mainActivityDataViewModel.getPlayer1AvatarDrawable(),
                 mainActivityDataViewModel.getPlayer1MarkerDrawable(), mainActivityDataViewModel.getPlayer1markerName());
@@ -155,7 +158,7 @@ public class GameFragmentSP3 extends Fragment {
                         // Schedule the next update in 1 second
                         timerHandler.postDelayed(this, 1000);
                     } else {
-                        computerTurn(player2markerid, playerIndicatorTextView);
+                        computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         timerCount = 10;
                         timerHandler.postDelayed(this, 1000);
                     }
@@ -318,7 +321,9 @@ public class GameFragmentSP3 extends Fragment {
                 button24.setImageResource(android.R.color.transparent);
 
                 playerIndicatorTextView.setText("Player 1 Turn");
-                turnCountTextView.setText("5");
+                turnCount = 1;
+                turnCountTextView.setText(Integer.toString(turnCount));
+                mainActivityDataViewModel.setTurnCount(turnCount);
             }
         });
 
@@ -340,7 +345,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button0.setImageResource(player2markerid);
@@ -376,7 +381,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button1.setImageResource(player2markerid);
@@ -411,7 +416,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button2.setImageResource(player2markerid);
@@ -447,7 +452,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button3.setImageResource(player2markerid);
@@ -482,7 +487,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button4.setImageResource(player2markerid);
@@ -517,7 +522,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button5.setImageResource(player2markerid);
@@ -552,7 +557,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button6.setImageResource(player2markerid);
@@ -587,7 +592,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button7.setImageResource(player2markerid);
@@ -622,7 +627,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button8.setImageResource(player2markerid);
@@ -657,7 +662,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button9.setImageResource(player2markerid);
@@ -692,7 +697,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button10.setImageResource(player2markerid);
@@ -727,7 +732,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button11.setImageResource(player2markerid);
@@ -762,7 +767,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button12.setImageResource(player2markerid);
@@ -797,7 +802,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button13.setImageResource(player2markerid);
@@ -832,7 +837,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button14.setImageResource(player2markerid);
@@ -867,7 +872,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button15.setImageResource(player2markerid);
@@ -902,7 +907,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button16.setImageResource(player2markerid);
@@ -937,7 +942,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button17.setImageResource(player2markerid);
@@ -972,7 +977,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button18.setImageResource(player2markerid);
@@ -1007,7 +1012,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button19.setImageResource(player2markerid);
@@ -1042,7 +1047,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button20.setImageResource(player2markerid);
@@ -1077,7 +1082,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button21.setImageResource(player2markerid);
@@ -1112,7 +1117,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button21.setImageResource(player2markerid);
@@ -1147,7 +1152,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button23.setImageResource(player2markerid);
@@ -1182,7 +1187,7 @@ public class GameFragmentSP3 extends Fragment {
                         } else if (checkForWin("p2")) {
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
-                            computerTurn(player2markerid, playerIndicatorTextView);
+                            computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
                         }
                     } else if (player2active) {
                         button24.setImageResource(player2markerid);
@@ -1202,13 +1207,14 @@ public class GameFragmentSP3 extends Fragment {
         return view;
     }
 
-    private void computerTurn(int player2MarkerId, TextView playerIndicatorTextView)
+    private void computerTurn(int player2MarkerId, TextView playerIndicatorTextView, TextView turnCountTextView)
     {
         new Handler().postDelayed(new Runnable()
         {
             @Override
             public void run()
             {
+                MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
                 List<ImageButton> shuffledButtons = new ArrayList<>(buttonsList);
                 Collections.shuffle(shuffledButtons);
 
@@ -1223,6 +1229,11 @@ public class GameFragmentSP3 extends Fragment {
 
                         player1active = true;
                         player2active = false;
+
+                        turnCount++;
+                        turnCountTextView.setText(Integer.toString(turnCount));
+                        mainActivityDataViewModel.setTurnCount(turnCount);
+
                         playerIndicatorTextView.setText("Player 1 Turn");
                         break;
                     }
