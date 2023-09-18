@@ -31,12 +31,41 @@
         android:textColor="@color/black"
         tools:text="Score"/>
 
+    <!-- Games played TextView -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gamesPlayed"
+        android:layout_toEndOf="@id/imageview"
+        android:layout_below="@id/score"
+        android:textColor="@color/black"
+        android:text="Games played: " />
+
+    <!-- Games won TextView -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gamesWon"
+        android:layout_toEndOf="@id/imageview"
+        android:layout_below="@id/gamesPlayed"
+        android:textColor="@color/black"
+        android:text="Games won: " />
+
+    <!-- Win rate TextView -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/winRate"
+        android:layout_toEndOf="@id/imageview"
+        android:layout_below="@id/gamesWon"
+        android:textColor="@color/black"
+        android:text="Win rate: " />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@id/imageview"
+        android:layout_below="@id/winRate"
         android:layout_marginTop="10dp"
         android:background="#DAD8D8"/>
-
 
 </RelativeLayout>
