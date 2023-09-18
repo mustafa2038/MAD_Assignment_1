@@ -21,10 +21,22 @@ package com.example.tictactoe;
         import java.util.List;
 
 public class LeaderboardFragment extends Fragment {
+    RecyclerView recyclerView;
+    List<Item> items = new ArrayList<>();
 
     public LeaderboardFragment() {
         // Required empty public constructor
     }
+
+    // Method to add player data dynamically
+    public void addPlayerData(String name, String score, int image, int gamesPlayed, int gamesWon, double winRate) {
+        items.add(new Item(name, score, image, gamesPlayed, gamesWon, winRate));
+        // Notify the adapter that data has been added
+        recyclerView.getAdapter().notifyDataSetChanged();
+    }
+    // how to use in other code:
+    // LeaderboardFragment leaderboardFragment = new LeaderboardFragment();
+    //leaderboardFragment.addPlayerData("New Player", "5678", R.drawable.player_image, 50, 25, 50.0);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,24 +45,22 @@ public class LeaderboardFragment extends Fragment {
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerview);
 
-        List<Item> items = new ArrayList<>();
-        // Add sample data (replace with actual data)
-        items.add(new Item("John wick", "Score: 12345", R.drawable.gigachad, 100, 50, 50.0));
-        items.add(new Item("Robert j", "Score: 12345", R.drawable.pepe1, 100, 50, 60.0));
-        items.add(new Item("James Gunn", "Score: 12345", R.drawable.wojak, 100, 50, 60.0));
-        items.add(new Item("Ricky tales", "Score: 12345", R.drawable.crown, 100, 50, 60.0));
-        items.add(new Item("Micky mose", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Pick War", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Leg piece", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Apple Mac", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("John wick", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Robert j", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("James Gunn", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Ricky tales", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Micky mose", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Pick War", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Leg piece", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
-        items.add(new Item("Apple Mac", "Score: 12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("John wick", "12345", R.drawable.gigachad, 100, 50, 50.0));
+        items.add(new Item("Robert j", "12345", R.drawable.pepe1, 100, 50, 60.0));
+        items.add(new Item("James Gunn", "12345", R.drawable.wojak, 100, 50, 60.0));
+        items.add(new Item("Ricky tales", "12345", R.drawable.crown, 100, 50, 60.0));
+        items.add(new Item("Micky mose", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Pick War", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Leg piece", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Apple Mac", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("John wick", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Robert j", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("James Gunn", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Ricky tales", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Micky mose", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Pick War", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Leg piece", "12345", R.drawable.gigachad, 100, 50, 60.0));
+        items.add(new Item("Apple Mac", "12345", R.drawable.gigachad, 100, 50, 60.0));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new MyAdapter(getContext(), items));
@@ -158,7 +168,7 @@ public class LeaderboardFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             holder.nameView.setText(items.get(position).getName());
-            holder.scoreView.setText(items.get(position).getScore());
+            holder.scoreView.setText("score: " + items.get(position).getScore());
             holder.imageView.setImageResource(items.get(position).getImage());
 
             holder.gamesPlayedView.setText("Games played: " + items.get(position).getGamesPlayed());
@@ -190,3 +200,4 @@ public class LeaderboardFragment extends Fragment {
         }
     }
 }
+
