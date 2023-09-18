@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GameFragmentMP1 extends Fragment {
@@ -31,6 +32,7 @@ public class GameFragmentMP1 extends Fragment {
     private boolean timerPaused = false;
     private int turnCount;
     private List<String> boardInfo =  new ArrayList<>();
+    private final List<String> boardInfoReset = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 
     private int timerCount = 10;
     public GameFragmentMP1() {
@@ -46,6 +48,8 @@ public class GameFragmentMP1 extends Fragment {
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         boardInfo = mainActivityDataViewModel.getBoardInfo();
+
+        mainActivityDataViewModel.setGameMode("gameFragmentMP1");
 
         timerHandler = new Handler(Looper.getMainLooper());
         timerCount = 10;
@@ -214,6 +218,8 @@ public class GameFragmentMP1 extends Fragment {
                 turnCount = 1;
                 turnCountTextView.setText(Integer.toString(turnCount));
                 mainActivityDataViewModel.setTurnCount(turnCount);
+
+                boardInfo = boardInfoReset;
             }
         });
 
@@ -581,6 +587,16 @@ public class GameFragmentMP1 extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
+        boardInfo = mainActivityDataViewModel.getBoardInfo();
+    }
+
     private boolean checkForWin(String playerMarker) {
         // Define the winning combinations
         int[][] winCombinations = {

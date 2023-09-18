@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -30,7 +31,9 @@ public class GameFragmentMP2 extends Fragment {
     private boolean timerPaused = false;
     private int turnCount;
     private List<String> boardInfo =  new ArrayList<>();
+    private final List<String> boardInfoReset = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
     private List<ImageButton> buttonsList = new ArrayList<>();
+
 
     private int timerCount = 10;
     public GameFragmentMP2() {
@@ -46,6 +49,8 @@ public class GameFragmentMP2 extends Fragment {
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         boardInfo = mainActivityDataViewModel.getBoardInfo();
+
+        mainActivityDataViewModel.setGameMode("gameFragmentMP2");
 
         timerHandler = new Handler(Looper.getMainLooper());
         timerCount = 10;
@@ -274,6 +279,8 @@ public class GameFragmentMP2 extends Fragment {
                 turnCount = 1;
                 turnCountTextView.setText(Integer.toString(turnCount));
                 mainActivityDataViewModel.setTurnCount(turnCount);
+
+                boardInfo = boardInfoReset;
             }
         });
 
@@ -920,6 +927,15 @@ public class GameFragmentMP2 extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
+        boardInfo = mainActivityDataViewModel.getBoardInfo();
     }
 
     private boolean checkForWin(String playerMarker) {

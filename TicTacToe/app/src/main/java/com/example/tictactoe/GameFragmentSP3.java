@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class GameFragmentSP3 extends Fragment {
     private boolean timerPaused = false;
     private int turnCount;
     private List<String> boardInfo =  new ArrayList<>();
+    private final List<String> boardInfoReset = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
     private List<ImageButton> buttonsList = new ArrayList<>();
 
     private int timerCount = 10;
@@ -47,6 +49,8 @@ public class GameFragmentSP3 extends Fragment {
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         boardInfo = mainActivityDataViewModel.getBoardInfo();
+
+        mainActivityDataViewModel.setGameMode("gameFragmentSP3");
 
         timerHandler = new Handler(Looper.getMainLooper());
         timerCount = 10;
@@ -208,23 +212,23 @@ public class GameFragmentSP3 extends Fragment {
                     } else if (i == 15) {
                         button15.setImageResource(player1markerid);
                     } else if (i == 16) {
-                        button1.setImageResource(player1markerid);
+                        button16.setImageResource(player1markerid);
                     } else if (i == 17) {
-                        button2.setImageResource(player1markerid);
+                        button17.setImageResource(player1markerid);
                     } else if (i == 18) {
-                        button3.setImageResource(player1markerid);
+                        button18.setImageResource(player1markerid);
                     } else if (i == 19) {
-                        button4.setImageResource(player1markerid);
+                        button19.setImageResource(player1markerid);
                     } else if (i == 20) {
-                        button5.setImageResource(player1markerid);
+                        button20.setImageResource(player1markerid);
                     } else if (i == 21) {
-                        button6.setImageResource(player1markerid);
+                        button21.setImageResource(player1markerid);
                     } else if (i == 22) {
-                        button7.setImageResource(player1markerid);
+                        button22.setImageResource(player1markerid);
                     } else if (i == 23) {
-                        button8.setImageResource(player1markerid);
+                        button23.setImageResource(player1markerid);
                     } else if (i == 24) {
-                        button9.setImageResource(player1markerid);
+                        button24.setImageResource(player1markerid);
                     }
                 } else if (element.equals("p2")) {
                     if (i == 0) {
@@ -246,37 +250,37 @@ public class GameFragmentSP3 extends Fragment {
                     } else if (i == 8) {
                         button8.setImageResource(player2markerid);
                     } else if (i == 9) {
-                        button9.setImageResource(player1markerid);
+                        button9.setImageResource(player2markerid);
                     } else if (i == 10) {
-                        button10.setImageResource(player1markerid);
+                        button10.setImageResource(player2markerid);
                     } else if (i == 11) {
-                        button11.setImageResource(player1markerid);
+                        button11.setImageResource(player2markerid);
                     } else if (i == 12) {
-                        button12.setImageResource(player1markerid);
+                        button12.setImageResource(player2markerid);
                     } else if (i == 13) {
-                        button13.setImageResource(player1markerid);
+                        button13.setImageResource(player2markerid);
                     } else if (i == 14) {
-                        button14.setImageResource(player1markerid);
+                        button14.setImageResource(player2markerid);
                     } else if (i == 15) {
-                        button15.setImageResource(player1markerid);
+                        button15.setImageResource(player2markerid);
                     } else if (i == 16) {
-                        button1.setImageResource(player1markerid);
+                        button16.setImageResource(player2markerid);
                     } else if (i == 17) {
-                        button2.setImageResource(player1markerid);
+                        button17.setImageResource(player2markerid);
                     } else if (i == 18) {
-                        button3.setImageResource(player1markerid);
+                        button18.setImageResource(player2markerid);
                     } else if (i == 19) {
-                        button4.setImageResource(player1markerid);
+                        button19.setImageResource(player2markerid);
                     } else if (i == 20) {
-                        button5.setImageResource(player1markerid);
+                        button20.setImageResource(player2markerid);
                     } else if (i == 21) {
-                        button6.setImageResource(player1markerid);
+                        button21.setImageResource(player2markerid);
                     } else if (i == 22) {
-                        button7.setImageResource(player1markerid);
+                        button22.setImageResource(player2markerid);
                     } else if (i == 23) {
-                        button8.setImageResource(player1markerid);
+                        button23.setImageResource(player2markerid);
                     } else if (i == 24) {
-                        button9.setImageResource(player1markerid);
+                        button24.setImageResource(player2markerid);
                     }
                 }
             }
@@ -325,6 +329,8 @@ public class GameFragmentSP3 extends Fragment {
                 turnCount = 1;
                 turnCountTextView.setText(Integer.toString(turnCount));
                 mainActivityDataViewModel.setTurnCount(turnCount);
+
+                boardInfo = boardInfoReset;
             }
         });
 
@@ -1317,6 +1323,15 @@ public class GameFragmentSP3 extends Fragment {
                 }
             }
         }, 1000);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
+        boardInfo = mainActivityDataViewModel.getBoardInfo();
     }
 
     private boolean checkForWin(String playerMarker) {

@@ -28,7 +28,7 @@ public class MainActivityData extends ViewModel {
     public MutableLiveData<String> streakClicked = new MutableLiveData<>("F");
     public MutableLiveData<Integer> timerCount = new MutableLiveData<>(10);
     public MutableLiveData<Integer> turnCount = new MutableLiveData<>(0);
-    public MutableLiveData<List<String>> boardInfo = new MutableLiveData<>(Arrays.asList("", "", "", "", "p", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
+    public MutableLiveData<List<String>> boardInfo = new MutableLiveData<>(Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
     public MutableLiveData <Boolean> boardInfoPresent = new MutableLiveData(false);
     public MutableLiveData<String> gameMode = new MutableLiveData<>("");
     public MainActivityData() {
@@ -51,7 +51,7 @@ public class MainActivityData extends ViewModel {
 
     public List<String> getBoardInfo(){return boardInfo.getValue();}
 
-    public void resetBoardInfo(){boardInfo.setValue(Arrays.asList("", "", "", "", "p", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));}
+    public void resetBoardInfo(){boardInfo.setValue(Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));}
 
     public void setBoardSize(String value){
         boardSize.setValue(value);

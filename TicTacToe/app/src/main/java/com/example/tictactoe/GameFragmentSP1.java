@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class GameFragmentSP1 extends Fragment {
     private boolean timerPaused = false;
     private int turnCount;
     private List<String> boardInfo =  new ArrayList<>();
+    private final List<String> boardInfoReset = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
     private List<ImageButton> buttonsList = new ArrayList<>();
 
     private int timerCount = 10;
@@ -49,6 +51,8 @@ public class GameFragmentSP1 extends Fragment {
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         boardInfo = mainActivityDataViewModel.getBoardInfo();
+
+        mainActivityDataViewModel.setGameMode("gameFragmentSP1");
 
         timerHandler = new Handler(Looper.getMainLooper());
         timerCount = 10;
@@ -212,6 +216,8 @@ public class GameFragmentSP1 extends Fragment {
                 turnCount = 1;
                 turnCountTextView.setText(Integer.toString(turnCount));
                 mainActivityDataViewModel.setTurnCount(turnCount);
+
+                boardInfo = boardInfoReset;
             }
         });
 
@@ -560,6 +566,15 @@ public class GameFragmentSP1 extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
+
+        boardInfo = mainActivityDataViewModel.getBoardInfo();
     }
 
     private void computerTurn(int player2MarkerId, TextView playerIndicatorTextView, TextView turnCountTextView)

@@ -38,12 +38,18 @@ public class ExitGameConfirmFragment extends Fragment {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mainActivityDataViewModel.getGameMode().equals("Singleplayer"))
-                {
-                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSinglePlayer()");
-                }else if(mainActivityDataViewModel.getGameMode().equals("Multiplayer"))
-                {
-                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMultiPlayer()");
+                if(mainActivityDataViewModel.getGameMode().equals("gameFragmentMP1")) {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMP1()");
+                } else if(mainActivityDataViewModel.getGameMode().equals("gameFragmentMP2")) {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMP2()");
+                } else if(mainActivityDataViewModel.getGameMode().equals("gameFragmentMP3")) {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentMP3()");
+                } else if(mainActivityDataViewModel.getGameMode().equals("gameFragmentSP1")) {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSP1()");
+                } else if(mainActivityDataViewModel.getGameMode().equals("gameFragmentSP2")) {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSP2()");
+                } else if(mainActivityDataViewModel.getGameMode().equals("gameFragmentSP3")) {
+                    mainActivityDataViewModel.setClickedValue("loadGameFragmentSP3()");
                 }
             }
         });
