@@ -30,9 +30,21 @@ public class LeaderboardFragment extends Fragment {
 
     // Method to add player data dynamically
     public void addPlayerData(String name, String score, int image, int gamesPlayed, int gamesWon, double winRate) {
+        // Check if the player with the same name exists in the list
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getName().equals(name)) {
+                // Player with the same name found, replace the data
+                items.set(i, new Item(name, score, image, gamesPlayed, gamesWon, winRate));
+                // Notify the adapter that data has been updated
+                recyclerView.getAdapter().notifyItemChanged(i);
+                return; // Exit the method
+            }
+        }
+
+        // If the player name is not found, add a new item to the list
         items.add(new Item(name, score, image, gamesPlayed, gamesWon, winRate));
         // Notify the adapter that data has been added
-        recyclerView.getAdapter().notifyDataSetChanged();
+        recyclerView.getAdapter().notifyItemInserted(items.size() - 1);
     }
     // how to use in other code:
     // LeaderboardFragment leaderboardFragment = new LeaderboardFragment();
