@@ -345,36 +345,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button0.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button0.setImageResource(player1markerid);
-                        boardInfo.set(0, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button0.setImageResource(player1markerid);
+                    boardInfo.set(0, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button0.setImageResource(player2markerid);
-                        boardInfo.set(0, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button0.setImageResource(player2markerid);
+                    boardInfo.set(0, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -386,36 +386,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button1.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button1.setImageResource(player1markerid);
-                        boardInfo.set(1, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button1.setImageResource(player1markerid);
+                    boardInfo.set(1, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button1.setImageResource(player2markerid);
-                        boardInfo.set(1, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button1.setImageResource(player2markerid);
+                    boardInfo.set(1, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -426,36 +426,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button2.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button2.setImageResource(player1markerid);
-                        boardInfo.set(2, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button2.setImageResource(player1markerid);
+                    boardInfo.set(2, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button2.setImageResource(player2markerid);
-                        boardInfo.set(2, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button2.setImageResource(player2markerid);
+                    boardInfo.set(2, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -467,36 +467,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button3.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button3.setImageResource(player1markerid);
-                        boardInfo.set(3, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button3.setImageResource(player1markerid);
+                    boardInfo.set(3, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button3.setImageResource(player2markerid);
-                        boardInfo.set(3, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button3.setImageResource(player2markerid);
+                    boardInfo.set(3, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -507,38 +507,39 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button4.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button4.setImageResource(player1markerid);
-                        boardInfo.set(4, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button4.setImageResource(player1markerid);
+                    boardInfo.set(4, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button4.setImageResource(player2markerid);
-                        boardInfo.set(4, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button4.setImageResource(player2markerid);
+                    boardInfo.set(4, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
+
             }
         });
 
@@ -547,36 +548,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button5.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button5.setImageResource(player1markerid);
-                        boardInfo.set(5, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button5.setImageResource(player1markerid);
+                    boardInfo.set(5, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button5.setImageResource(player2markerid);
-                        boardInfo.set(5, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button5.setImageResource(player2markerid);
+                    boardInfo.set(5, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -587,36 +588,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button6.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button6.setImageResource(player1markerid);
-                        boardInfo.set(6, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button6.setImageResource(player1markerid);
+                    boardInfo.set(6, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button6.setImageResource(player2markerid);
-                        boardInfo.set(6, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button6.setImageResource(player2markerid);
+                    boardInfo.set(6, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -627,36 +628,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button7.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button7.setImageResource(player1markerid);
-                        boardInfo.set(7, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button7.setImageResource(player1markerid);
+                    boardInfo.set(7, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button7.setImageResource(player2markerid);
-                        boardInfo.set(7, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button7.setImageResource(player2markerid);
+                    boardInfo.set(7, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -667,36 +668,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button8.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button8.setImageResource(player1markerid);
-                        boardInfo.set(8, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button8.setImageResource(player1markerid);
+                    boardInfo.set(8, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button8.setImageResource(player2markerid);
-                        boardInfo.set(8, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button8.setImageResource(player2markerid);
+                    boardInfo.set(8, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -707,36 +708,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button9.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button9.setImageResource(player1markerid);
-                        boardInfo.set(9, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button9.setImageResource(player1markerid);
+                    boardInfo.set(9, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button9.setImageResource(player2markerid);
-                        boardInfo.set(9, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button9.setImageResource(player2markerid);
+                    boardInfo.set(9, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -747,37 +748,37 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button10.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button10.setImageResource(player1markerid);
-                        boardInfo.set(10, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button10.setImageResource(player1markerid);
+                    boardInfo.set(10, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button10.setImageResource(player2markerid);
-                        boardInfo.set(8, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button10.setImageResource(player2markerid);
+                    boardInfo.set(8, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -788,36 +789,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button11.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button11.setImageResource(player1markerid);
-                        boardInfo.set(11, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button11.setImageResource(player1markerid);
+                    boardInfo.set(11, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button11.setImageResource(player2markerid);
-                        boardInfo.set(11, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button11.setImageResource(player2markerid);
+                    boardInfo.set(11, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -828,36 +829,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button12.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button12.setImageResource(player1markerid);
-                        boardInfo.set(12, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button12.setImageResource(player1markerid);
+                    boardInfo.set(12, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button12.setImageResource(player2markerid);
-                        boardInfo.set(12, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button12.setImageResource(player2markerid);
+                    boardInfo.set(12, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -868,36 +869,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button13.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button13.setImageResource(player1markerid);
-                        boardInfo.set(13, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button13.setImageResource(player1markerid);
+                    boardInfo.set(13, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button13.setImageResource(player2markerid);
-                        boardInfo.set(13, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button13.setImageResource(player2markerid);
+                    boardInfo.set(13, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -908,36 +909,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button14.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button14.setImageResource(player1markerid);
-                        boardInfo.set(14, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button14.setImageResource(player1markerid);
+                    boardInfo.set(14, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button14.setImageResource(player2markerid);
-                        boardInfo.set(14, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button14.setImageResource(player2markerid);
+                    boardInfo.set(14, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -948,36 +949,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button15.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button15.setImageResource(player1markerid);
-                        boardInfo.set(15, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button15.setImageResource(player1markerid);
+                    boardInfo.set(15, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button15.setImageResource(player2markerid);
-                        boardInfo.set(15, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button15.setImageResource(player2markerid);
+                    boardInfo.set(15, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -988,36 +989,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button16.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button16.setImageResource(player1markerid);
-                        boardInfo.set(16, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button16.setImageResource(player1markerid);
+                    boardInfo.set(16, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button16.setImageResource(player2markerid);
-                        boardInfo.set(16, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button16.setImageResource(player2markerid);
+                    boardInfo.set(16, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1028,36 +1029,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button17.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button17.setImageResource(player1markerid);
-                        boardInfo.set(17, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button17.setImageResource(player1markerid);
+                    boardInfo.set(17, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button17.setImageResource(player2markerid);
-                        boardInfo.set(17, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button17.setImageResource(player2markerid);
+                    boardInfo.set(17, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1068,36 +1069,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button18.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button18.setImageResource(player1markerid);
-                        boardInfo.set(18, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button18.setImageResource(player1markerid);
+                    boardInfo.set(18, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button18.setImageResource(player2markerid);
-                        boardInfo.set(18, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button18.setImageResource(player2markerid);
+                    boardInfo.set(18, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1108,36 +1109,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button19.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button19.setImageResource(player1markerid);
-                        boardInfo.set(19, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button19.setImageResource(player1markerid);
+                    boardInfo.set(19, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button19.setImageResource(player2markerid);
-                        boardInfo.set(19, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button19.setImageResource(player2markerid);
+                    boardInfo.set(19, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1148,36 +1149,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button20.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button20.setImageResource(player1markerid);
-                        boardInfo.set(20, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button20.setImageResource(player1markerid);
+                    boardInfo.set(20, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button20.setImageResource(player2markerid);
-                        boardInfo.set(20, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button20.setImageResource(player2markerid);
+                    boardInfo.set(20, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1188,36 +1189,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button21.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button21.setImageResource(player1markerid);
-                        boardInfo.set(21, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button21.setImageResource(player1markerid);
+                    boardInfo.set(21, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button21.setImageResource(player2markerid);
-                        boardInfo.set(21, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button21.setImageResource(player2markerid);
+                    boardInfo.set(21, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1228,36 +1229,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button22.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button22.setImageResource(player1markerid);
-                        boardInfo.set(22, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button22.setImageResource(player1markerid);
+                    boardInfo.set(22, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button21.setImageResource(player2markerid);
-                        boardInfo.set(22, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button21.setImageResource(player2markerid);
+                    boardInfo.set(22, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1268,36 +1269,36 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button23.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button23.setImageResource(player1markerid);
-                        boardInfo.set(23, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button23.setImageResource(player1markerid);
+                    boardInfo.set(23, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button23.setImageResource(player2markerid);
-                        boardInfo.set(23, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button23.setImageResource(player2markerid);
+                    boardInfo.set(23, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
             }
@@ -1308,38 +1309,39 @@ public class GameFragmentMP3 extends Fragment {
             public void onClick(View view) {
                 if (button24.getDrawable() == null) {
                     timerCount = 10;
+                }
 
-                    if (player1active) {
-                        button24.setImageResource(player1markerid);
-                        boardInfo.set(24, "p1");
-                        player1active = false;
-                        player2active = true;
-                        playerIndicatorTextView.setText("Player 2 Turn");
+                if (player1active) {
+                    button24.setImageResource(player1markerid);
+                    boardInfo.set(24, "p1");
+                    player1active = false;
+                    player2active = true;
+                    playerIndicatorTextView.setText("Player 2 Turn");
 
-                        if (checkForWin("p1")) {
-                            mainActivityDataViewModel.setWinner(player1);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        } else if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
-                    } else if (player2active) {
-                        button24.setImageResource(player2markerid);
-                        boardInfo.set(24, "p2");
-                        player2active = false;
-                        player1active = true;
-                        playerIndicatorTextView.setText("Player 1 Turn");
+                    if (checkForWin("p1")) {
+                        mainActivityDataViewModel.setWinner(player1);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    } else if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
+                    }
+                } else if (player2active) {
+                    button24.setImageResource(player2markerid);
+                    boardInfo.set(24, "p2");
+                    player2active = false;
+                    player1active = true;
+                    playerIndicatorTextView.setText("Player 1 Turn");
 
-                        turnCount++;
-                        turnCountTextView.setText(Integer.toString(turnCount));
-                        mainActivityDataViewModel.setTurnCount(turnCount);
+                    turnCount++;
+                    turnCountTextView.setText(Integer.toString(turnCount));
+                    mainActivityDataViewModel.setTurnCount(turnCount);
 
-                        if (checkForWin("p2")) {
-                            mainActivityDataViewModel.setWinner(player2);
-                            ((MainActivity) requireActivity()).loadEndScreenFragment();
-                        }
+                    if (checkForWin("p2")) {
+                        mainActivityDataViewModel.setWinner(player2);
+                        ((MainActivity) requireActivity()).loadEndScreenFragment();
                     }
                 }
+
             }
         });
 
