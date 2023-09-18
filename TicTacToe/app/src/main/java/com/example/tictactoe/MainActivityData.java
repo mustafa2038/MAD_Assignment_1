@@ -15,6 +15,7 @@ public class MainActivityData extends ViewModel {
     public MutableLiveData<String> streak = new MutableLiveData<>();
     public MutableLiveData<String> player1Name = new MutableLiveData<>();
     public MutableLiveData<String> player2Name = new MutableLiveData<>();
+    public MutableLiveData<Player> winner = new MutableLiveData<>();
 
     public MutableLiveData<Drawable> player1AvatarDrawable = new MutableLiveData<Drawable>();
     public MutableLiveData<Drawable> player2AvatarDrawable = new MutableLiveData<Drawable>();
@@ -142,4 +143,6 @@ public class MainActivityData extends ViewModel {
     public void setTimerCount(int value){timerCount.setValue(value);}
     public String getGameMode(){return gameMode.getValue();}
     public void setGameMode(String value){gameMode.setValue(value);}
+    public Player getWinner() {return winner.getValue();}
+    public void setWinner(Player value) {winner.setValue(value);}
 }

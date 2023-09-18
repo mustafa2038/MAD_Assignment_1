@@ -22,6 +22,7 @@ import java.util.List;
 public class GameFragmentSP2 extends Fragment {
     Player player1;
     Player player2;
+    Player winner;
     boolean player1active = true;
     boolean player2active = false;
 
@@ -279,8 +280,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -293,6 +296,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -315,8 +319,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -329,6 +335,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -350,8 +357,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -364,6 +373,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -386,8 +396,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -400,6 +412,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -421,8 +434,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -435,6 +450,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -456,8 +472,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -470,6 +488,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -491,8 +510,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -505,6 +526,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -526,8 +548,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -540,6 +564,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -561,8 +586,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -575,6 +602,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -596,8 +624,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -610,6 +640,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -631,8 +662,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -645,6 +678,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -666,8 +700,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -680,6 +716,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -701,8 +738,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -715,6 +754,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -736,8 +776,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -750,6 +792,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -771,8 +814,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -785,6 +830,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
@@ -806,8 +852,10 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 2 Turn");
 
                         if (checkForWin("p1")) {
+                            mainActivityDataViewModel.setWinner(player1);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         } else {
                             computerTurn(player2markerid, playerIndicatorTextView, turnCountTextView);
@@ -820,6 +868,7 @@ public class GameFragmentSP2 extends Fragment {
                         playerIndicatorTextView.setText("Player 1 Turn");
 
                         if (checkForWin("p2")) {
+                            mainActivityDataViewModel.setWinner(player2);
                             ((MainActivity) requireActivity()).loadEndScreenFragment();
                         }
                     }
