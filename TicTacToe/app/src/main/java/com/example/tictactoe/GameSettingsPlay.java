@@ -98,6 +98,9 @@ public class GameSettingsPlay extends Fragment {
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardSize("3x3");
                 mainActivityDataViewModel.setBoardClicked("T");
+                streakBut1.setVisibility(View.VISIBLE);
+                streakBut2.setVisibility(View.GONE);
+                streakBut3.setVisibility(View.GONE);
             }
         });
         boardBut2.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +108,9 @@ public class GameSettingsPlay extends Fragment {
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardSize("4x4");
                 mainActivityDataViewModel.setBoardClicked("T");
+                streakBut1.setVisibility(View.VISIBLE);
+                streakBut2.setVisibility(View.VISIBLE);
+                streakBut3.setVisibility(View.GONE);
             }
         });
         boardBut3.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +118,9 @@ public class GameSettingsPlay extends Fragment {
             public void onClick(View view) {
                 mainActivityDataViewModel.setBoardSize("5x5");
                 mainActivityDataViewModel.setBoardClicked("T");
+                streakBut1.setVisibility(View.VISIBLE);
+                streakBut2.setVisibility(View.VISIBLE);
+                streakBut3.setVisibility(View.VISIBLE);
             }
         });
         streakBut1.setOnClickListener(new View.OnClickListener() {

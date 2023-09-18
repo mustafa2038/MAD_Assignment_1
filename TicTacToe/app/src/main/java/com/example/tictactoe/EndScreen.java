@@ -35,7 +35,7 @@ public class EndScreen extends Fragment {
         ImageView winnerImage = view.findViewById(R.id.winnerImage);
 
         // Set the winner text
-        winnerText.setText(playerName + " wins!");
+        winnerText.setText(String.format("%s wins!", playerName));
 
         // Set the winner image (replace R.drawable.WinnerImage with your actual image resource)
         winnerImage.setImageResource(playerImage);
