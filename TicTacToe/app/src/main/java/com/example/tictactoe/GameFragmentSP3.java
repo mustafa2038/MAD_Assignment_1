@@ -36,6 +36,8 @@ public class GameFragmentSP3 extends Fragment {
     private List<ImageButton> buttonsList = new ArrayList<>();
 
     private int timerCount = 10;
+    private int STREAK_NUMBER = 5; // Set the streak number
+
     public GameFragmentSP3() {
         // Required empty public constructor
     }
@@ -1335,31 +1337,58 @@ public class GameFragmentSP3 extends Fragment {
     }
 
     private boolean checkForWin(String playerMarker) {
-        // Define the winning combinations for a 5x5 grid
-        int[][] winCombinations = {
-                // Rows
-                {0, 1, 2, 12, 20}, {3, 4, 5, 13, 21}, {6, 7, 8, 14, 22},
-                {9, 10, 11, 15, 23}, {16, 17, 18, 19, 24},
+        // Define the winning combinations
+        int[][] winCombinations;
 
-                // Columns
-                {0, 3, 6, 9, 16}, {1, 4, 7, 10, 17}, {2, 5, 8, 11, 18},
-                {12, 13, 14, 15, 19}, {20, 21, 22, 23, 24},
+        // Choose the winning combinations based on STREAK_NUMBER
+        if (STREAK_NUMBER == 3) {
+            winCombinations = new int[][]{
+                    // Rows
+                    {0, 1, 2}, {3, 4, 5}, {6, 7, 8},
 
-                // Diagonals
-                {6, 10, 8, 13, 20}, {0, 4, 8, 15, 24}
-        };
+                    // Columns
+                    {0, 3, 6}, {1, 4, 7}, {2, 5, 8},
+
+                    // Diagonals
+                    {0, 4, 8}, {2, 4, 6}
+            };
+        } else if (STREAK_NUMBER == 4) {
+            winCombinations = new int[][]{
+                    // Rows
+                    {0, 1, 2, 12}, {3, 4, 5, 13}, {6, 7, 8, 14}, {9, 10, 11, 15},
+
+                    // Columns
+                    {0, 3, 6, 9}, {1, 4, 7, 10}, {2, 5, 8, 11}, {12, 13, 14, 15},
+
+                    // Diagonals
+                    {0, 4, 8, 15}, {9, 7, 5, 12}
+            };
+        } else if (STREAK_NUMBER == 5) {
+            winCombinations = new int[][]{
+                    // Rows
+                    {0, 1, 2, 12, 20}, {3, 4, 5, 13, 21}, {6, 7, 8, 14, 22},
+                    {9, 10, 11, 15, 23}, {16, 17, 18, 19, 24},
+
+                    // Columns
+                    {0, 3, 6, 9, 16}, {1, 4, 7, 10, 17}, {2, 5, 8, 11, 18},
+                    {12, 13, 14, 15, 19}, {20, 21, 22, 23, 24},
+
+                    // Diagonals
+                    {6, 10, 8, 13, 20}, {0, 4, 8, 15, 24}                                            // Diagonals
+            };
+        } else {
+            return false; // Invalid STREAK_NUMBER
+        }
 
         // Check each winning combination
         for (int[] combination : winCombinations) {
             boolean hasWon = true;
-
             for (int cell : combination) {
                 if (!boardInfo.get(cell).equals(playerMarker)) {
                     hasWon = false;
-                    break;
+                    break; // No need to check the rest of the cells in this combination
                 }
             }
-
             if (hasWon) {
                 return true; // Player has won
             }
