@@ -51,6 +51,7 @@ public class GameFragmentMP1 extends Fragment {
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity()).get(MainActivityData.class);
 
         boardInfo = mainActivityDataViewModel.getBoardInfo();
+        STREAK_NUMBER = Integer.parseInt(mainActivityDataViewModel.getStreak());
 
         mainActivityDataViewModel.setGameMode("gameFragmentMP1");
 
