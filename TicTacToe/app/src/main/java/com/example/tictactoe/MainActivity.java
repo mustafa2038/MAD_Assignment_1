@@ -27,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
     ExitGameConfirmFragment exitGameConfirmFragment = new ExitGameConfirmFragment();
     EndScreen endScreenFragment = new EndScreen();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         loadMenuFragment();
+
 
 
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(this).get(MainActivityData.class);

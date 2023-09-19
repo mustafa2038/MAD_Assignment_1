@@ -48,7 +48,7 @@ public class LeaderboardFragment extends Fragment {
     }
     // how to use in other code:
     // LeaderboardFragment leaderboardFragment = new LeaderboardFragment();
-    //leaderboardFragment.addPlayerData("New Player", "5678", R.drawable.player_image, 50, 25, 50.0);
+    // leaderboardFragment.addPlayerData("New Player", "5678", R.drawable.player_image, 50, 25, 50.0);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
