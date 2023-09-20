@@ -303,31 +303,33 @@ public class GameFragmentSP3 extends Fragment {
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                button0.setImageResource(android.R.color.transparent);
-                button1.setImageResource(android.R.color.transparent);
-                button2.setImageResource(android.R.color.transparent);
-                button3.setImageResource(android.R.color.transparent);
-                button4.setImageResource(android.R.color.transparent);
-                button5.setImageResource(android.R.color.transparent);
-                button6.setImageResource(android.R.color.transparent);
-                button7.setImageResource(android.R.color.transparent);
-                button8.setImageResource(android.R.color.transparent);
-                button9.setImageResource(android.R.color.transparent);
-                button10.setImageResource(android.R.color.transparent);
-                button11.setImageResource(android.R.color.transparent);
-                button12.setImageResource(android.R.color.transparent);
-                button13.setImageResource(android.R.color.transparent);
-                button14.setImageResource(android.R.color.transparent);
-                button15.setImageResource(android.R.color.transparent);
-                button16.setImageResource(android.R.color.transparent);
-                button17.setImageResource(android.R.color.transparent);
-                button18.setImageResource(android.R.color.transparent);
-                button19.setImageResource(android.R.color.transparent);
-                button20.setImageResource(android.R.color.transparent);
-                button21.setImageResource(android.R.color.transparent);
-                button22.setImageResource(android.R.color.transparent);
-                button23.setImageResource(android.R.color.transparent);
-                button24.setImageResource(android.R.color.transparent);
+                button0.setImageDrawable(null);
+                button1.setImageDrawable(null);
+                button2.setImageDrawable(null);
+                button3.setImageDrawable(null);
+                button4.setImageDrawable(null);
+                button5.setImageDrawable(null);
+                button6.setImageDrawable(null);
+                button7.setImageDrawable(null);
+                button8.setImageDrawable(null);
+                button9.setImageDrawable(null);
+                button10.setImageDrawable(null);
+                button11.setImageDrawable(null);
+                button12.setImageDrawable(null);
+                button13.setImageDrawable(null);
+                button14.setImageDrawable(null);
+                button15.setImageDrawable(null);
+                button16.setImageDrawable(null);
+                button17.setImageDrawable(null);
+                button18.setImageDrawable(null);
+                button19.setImageDrawable(null);
+                button20.setImageDrawable(null);
+                button21.setImageDrawable(null);
+                button22.setImageDrawable(null);
+                button23.setImageDrawable(null);
+                button24.setImageDrawable(null);
+
+
 
                 playerIndicatorTextView.setText("Player 1 Turn");
                 turnCount = 1;
